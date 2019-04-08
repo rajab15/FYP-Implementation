@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Patient Information</title>
+
+    <!-- OFFLINE BOOTSTRAP FOR CSS -->
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap-grid.css" />
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap-grid.min.css" />
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap-reboot.css" />
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css" />
+
+    <!-- OFFLINE BOOTSTRAP FOR JS -->
+    <link rel="stylesheet" href="bootstrap4/js/bootstrap.bundle.js" />
+    <link rel="stylesheet" href="bootstrap4/js/bootstrap.bundle.min.js" />
+    <link rel="stylesheet" href="bootstrap4/js/bootstrap.js" />
+    <link rel="stylesheet" href="bootstrap4/js/bootstrap.min.js" />
+
+    <!-- My CSS-->
+    <link rel="stylesheet" href="rajabcss.css" />
+
+</head>
+
+<body class="rajbackinfo">
+    <center>
+        <div class="container-fluid">
+
+            <!-- Row for Name of Hospital and its icon -->
+            <div class="row">
+                <div class="col">
+                    <h1>RAJAB AND FAMILY CARE CENTER</h1>
+                </div>
+            </div>
+
+            <h3>PATIENT INFORMATIOM</h3>
+            <br>
+
+            <form action="">
+                <div class="row">
+                    <div class="col">
+                        <!-- Patient Names -->
+                        <p>Patient Names:</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Middle name">
+                            </div>
+                        </div> <br>
+
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                            <div class="col"></div>
+                        </div> <br>
+                        <!-- Patient Address -->
+                        <p>Address:</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="City">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="State">
+                            </div>
+                        </div> <br>
+                        <!-- Patient Phone Numbers: -->
+                        <p>Phone Names:</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Primary Number">
+                            </div>
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Work Number">
+                            </div>
+                        </div> <br>
+                        <!-- Patient gender: -->
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Gender</label>
+                        <select class="custom-select my-1 mr-sm-2">
+                    <option selected>Choose...</option>
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                    <option value="N/A">N/A</option>
+                </select> <br> <br>
+                        <!-- Patient Date of Birth -->
+                        <p>Date of Birth:</p>
+                        <p>
+                            <input type="date" class="form-control" name="bday">
+                        </p>
+
+
+                        <!-- Patient Marital Status -->
+                        <!-- <p>Marital Status</p> -->
+                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Marital Status</label>
+                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                    <option selected>Choose...</option>
+                    <option value="single">Single</option>
+                    <option value="married">Married</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+                    </div>
+
+                    <!-- Emergence Section: -->
+                    <div class="col">
+                        <h4>INCASE OF EMERGENCE:</h4>
+                        <p>Emergence Contacts:</p>
+
+                        <!-- Emergence Names: -->
+                        <div class="row">
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div> <br>
+
+                        <!-- Emergence relationship with the Patient -->
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-default">Relationship with the Patient:</span>
+                            </div>
+
+                            <select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                                <option selected>Choose...</option>
+                                <option value="parent">Parent</option>
+                                <option value="brother">Brother</option>
+                                <option value="sister">Sister</option>
+                                <option value="relative">Relative</option>                            
+                                <option value="husband">Husband</option>
+                                <option value="wife">Wife</option>
+                                <option value="friend">Friend</option>
+                            </select>
+
+
+                            <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> -->
+                        </div> <br>
+
+                        <!-- Emergence Contacts: -->
+                        <p>Phone Numbers:</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Primary Number">
+                            </div>
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Work Number">
+                            </div>
+                        </div> <br>
+
+                        <!-- if patient is taking any medication before visit to the hospital -->
+                        <p>Is the patient takin any Medication?</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radios" id="yestaking" value="option1">
+                            <label class="form-check-label" for="yestaking">
+                        YES
+                    </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="Radios" id="notaking" value="option2" checked>
+                            <label class="form-check-label" for="notaking">
+                        NO
+                    </label> <br> <br>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">If Yes, <br> Please List <br> them here</span>
+                                </div>
+                                <textarea rows="5" class="form-control" aria-label="With textarea"></textarea>
+                            </div>
+                        </div> <br>
+
+                        <!-- Reset and Submit Buttons -->
+                        <input type="reset" class="btn btn-warning" name="reset" value="Reset">
+                        <a href="./precriptionPage.html">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" onclick="">
+                        </a>
+
+                    </div>
+                </div>
+            </form>
+
+            <div class="row container-fluid">
+
+            </div>
+
+
+
+
+        </div>
+    </center>
+</body>
+
+</html>
