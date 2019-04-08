@@ -31,6 +31,13 @@ h4 {
     background-position: center;
 }
 
+.rajbackforgot {
+    background-image: url("backgrounds/back009.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
 .rajfontbody {
     font-style: Times;
 }
