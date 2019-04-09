@@ -26,19 +26,28 @@
 
 </head>
 
-<body class="rajbackinfo">
+<body class="">
     <center>
-        <div class="container-fluid">
+        <!-- Navigation bar -->
+        <nav class="navbar navbar-dark bg-primary">
+            <a class="navbar-brand" href="#">
+                <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Hospital
+            </a>
+        </nav> <br> <br>
+
+        <div class="container">
 
             <!-- Row for Name of Hospital and its icon -->
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col">
                     <h1>RAJAB AND FAMILY CARE CENTER</h1>
                 </div>
             </div>
 
             <h3>PATIENT INFORMATIOM</h3>
-            <br>
+            <br> -->
+
+
 
             <form action="">
                 <div class="row">
@@ -60,6 +69,8 @@
                             </div>
                             <div class="col"></div>
                         </div> <br>
+
+                        <hr>
                         <!-- Patient Address -->
                         <p>Address:</p>
                         <div class="row">
@@ -80,6 +91,7 @@
                                 <input type="number" class="form-control" placeholder="Work Number" id="">
                             </div>
                         </div> <br>
+                        <hr>
                         <!-- Patient gender: -->
                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Gender</label>
                         <select class="custom-select my-1 mr-sm-2">
@@ -104,7 +116,7 @@
                     <option value="divorced" id="">Divorced</option>
                     <option value="widowed" id="">Widowed</option>
                 </select>
-                    </div>
+                    </div> <br>
 
                     <!-- Emergence Section: -->
                     <div class="col">
@@ -141,6 +153,7 @@
 
                             <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> -->
                         </div> <br>
+                        <hr>
 
                         <!-- Emergence Contacts: -->
                         <p>Phone Numbers:</p>
@@ -152,6 +165,7 @@
                                 <input type="number" class="form-control" placeholder="Work Number" id="">
                             </div>
                         </div> <br>
+                        <hr>
 
                         <!-- if patient is taking any medication before visit to the hospital -->
                         <p>Is the patient takin any Medication?</p>
@@ -174,22 +188,41 @@
                                 <textarea rows="5" class="form-control" aria-label="With textarea"></textarea>
                             </div>
                         </div> <br>
+                        <hr> <br>
 
-                        <!-- Reset and Submit Buttons -->
-                        <input type="reset" class="btn btn-warning" name="reset" value="Reset">
-                        <a href="./precriptionPage.html">
-                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" onclick="">
-                        </a>
+                        <div class="row">
+                            <div class="col"></div>
+                            <div class="col"></div>
+                            <div class="col">
+                                <!-- Reset and Submit Buttons -->
+                                <input type="reset" class="btn btn-warning" name="reset" value="Reset">
+                                <a href="./precriptionPage.html">
+                                    <input type="submit" class="btn btn-primary" name="submit" value="Submit" onclick="">
+                                </a>
+                            </div>
+                        </div>
+
+
 
                     </div>
                 </div>
             </form>
+            <br> <br>
+            <hr>
 
             <div class="row container-fluid">
 
             </div>
+
+            <!-- <div class="row">
+                <nav class="navbar fixed-bottom navbar-light bg-light">
+                    <a class="navbar-brand" href="#">Fixed bottom</a>
+                </nav>
+            </div> -->
+
         </div>
     </center>
+
 </body>
 
 </html>
