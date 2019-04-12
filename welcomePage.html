@@ -23,45 +23,45 @@
 
     <!-- My CSS-->
     <link rel="stylesheet" href="rajabcss.css" />
+    <link rel="stylesheet" href="rajabSlideNav.css" />
 
 </head>
 
-<body class="">
+<body class="rajbackwelcome">
     <!-- Navigation bar -->
-    <nav class="navbar navbar-dark bg-primary">
-        <a class="navbar-brand" href="#">
-            <img src="/docs/4.3/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt=""> Hospital
-        </a>
-    </nav> <br> <br>
+    <!-- Styling for slide Navigation bar on rajabSlideNav.css -->
+<div>
+    <nav class="navbar fixed-top navbar-dark bg-primary">
 
-    <div class="container-fluid">
-
-        <div class="container-fluid">
-            <div class="row"></div> <br>
-
-            <div class="row">
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-                <div class="col"></div>
-            </div> <br>
-
-            <div class="row">
-                <div class="col">
-                    <a href="" class="text-reset">Enter Patient Information</a> <br>
-                    <a href="">Enter Patient Prescription</a> <br>
-                    <a href="">View Patients Prescription</a> <br>
-                    <a href="">Assign Patient Ward</a> <br>
-                    <a href="">View Admitted Patients</a> <br>
-                    <a href="">View Coming Reminders</a> <br>
-
-                </div>
-                <div class="col"></div>
-                <!-- <div class="col"></div> -->
-            </div>
+        <div style="margin-left:40px; width:40%; position:absolute; font-size: 20px ">
+            <a class="navbar-brand" href="#">
+                <img src="backgrounds/hospital.png" width="30" height="30" class="d-inline-block align-top" alt=""> Hospital
+            </a>
         </div>
+        <div style="width:100%;"> <span style="font-size:30px; cursor:pointer; color:white " onclick="openNav()">&#9776;</span></div>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#">Enter Patient Information</a>
+            <a href="#">Enter Patient Prescription</a>
+            <a href="#">View Patients Prescription</a>
+            <a href="#">Assign Patient Ward</a>
+            <a href="#">View Admitted Patients</a>
+            <a href="#">View Coming Reminders</a>
+            <a href="#">Contact</a>
+        </div>
+    </nav>
+
+</div>
+   
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "350px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+    </script>
 
 </body>
 

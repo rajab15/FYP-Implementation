@@ -10,6 +10,10 @@ body {
     -webkit-text-size-adjust: 100%;
     font-weight: bold;
 }
+.bodi{
+    padding-top: 26px;
+    overflow: hidden;
+}
 
 h4 {
     font-weight: bolder;
@@ -36,6 +40,14 @@ h4 {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+}
+.rajbackwelcome{
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
 }
 
 .rajfontbody {
