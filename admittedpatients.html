@@ -1,0 +1,113 @@
+<?php
+include_once('connection.php');
+$query = "select * from admitted";
+$result = mysql_query($query);
+?>
+
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Admitted Patients</title>
+    
+        <!-- OFFLINE BOOTSTRAP FOR CSS -->
+        <link rel="stylesheet" href="bootstrap4/css/bootstrap.css" />
+        <link rel="stylesheet" href="bootstrap4/css/bootstrap-grid.css" />
+        <link rel="stylesheet" href="bootstrap4/css/bootstrap-grid.min.css" />
+        <link rel="stylesheet" href="bootstrap4/css/bootstrap-reboot.css" />
+        <link rel="stylesheet" href="bootstrap4/css/bootstrap-reboot.min.css" />
+        <link rel="stylesheet" href="bootstrap4/css/bootstrap.min.css" />
+    
+        <!-- OFFLINE BOOTSTRAP FOR JS -->
+        <link rel="stylesheet" href="bootstrap4/js/bootstrap.bundle.js" />
+        <link rel="stylesheet" href="bootstrap4/js/bootstrap.bundle.min.js" />
+        <link rel="stylesheet" href="bootstrap4/js/bootstrap.js" />
+        <link rel="stylesheet" href="bootstrap4/js/bootstrap.min.js" />
+    
+        <!-- My CSS-->
+        <link rel="stylesheet" href="rajabcss.css" />
+    
+    </head>
+
+    <body class="">
+        <!-- Navigation bar -->
+        <nav class="navbar fixed-top navbar-dark bg-primary">
+            <a class="navbar-brand" href="welcomePage.html">
+                <img src="backgrounds/hospital.png" width="30" height="30" class="d-inline-block align-top" alt=""> Hospital
+            </a>
+        </nav> <br> <br> <br>
+
+        <div class="container">
+            <center>
+            <table border="1" width=70%>
+                
+
+            <!-- Table for list of admitted patients -->
+            <table class="table table-striped" width=80%>
+                <thead>
+                    <tr>
+                    <th scope="col" >#</th>
+                    <th scope="col" width=35%>Patient Names:</th>
+                    <th scope="col" width=10%>Gender</th>
+                    <th scope="col" width=10%>Ward</th>
+                    <th scope="col" width=10%>Bed No.</th>
+                    <th scope="col" width=18%>Discharge Date</th>
+                    <th scope="col" width=12%></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">1</th>
+                        <td>Rajab Yassin Juma</td>
+                        <td>m</td>
+                        <td>A</td>
+                        <td>122</td>
+                        <td>03/03/1009</td>
+                        <td>
+                            <button type="button" class="btn btn-danger">Discharge</button>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <th scope="row">2</th>
+                        <td>Rajab Yassin Juma</td>
+                        <td>m</td>
+                        <td>A</td>
+                        <td>122</td>
+                        <td>03/03/1009</td>
+                    </tr> -->
+
+                    <tr>
+                        
+                    </tr>
+
+                    <!-- PHP for fetching names from the database -->
+                    <!-- <?php
+                    $conn = mysqli_connect("localhost", "root", "", "");
+                    if ($conn-> connect_error) {
+                        die("Connection failed:". $conn-> connect_error);
+                    }
+
+                    $sql = "SELECT id, username, password from admitted";
+                    $result = $conn-> query($sql);
+
+                    if ($result-> num_rows > 0) {
+                        while ($row = $result-> fetch_assoc()) {
+                            echo "<tr><td>". $row["#"]."</td><td>". $row["Patient Names:"]."</td><td>". $row["Gender"]."</td><td>". $row["Ward"]."</td><td>". $row["Bed No."]."</td><td>". $row["Discharge Date"]."</td></tr>";
+                        }
+                        echo "</tbody>";
+                    }
+                    else {
+                        echo "0 result";
+                    }
+                    
+                    $conn-> close();                    
+                    ?> -->
+                   
+            </table>
+            </center>
+        </div>        
+    </body>
+</html>
