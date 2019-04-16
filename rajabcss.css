@@ -9,7 +9,9 @@ body {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     font-weight: bold;
+    font-family: "Arial", Times, serif;
 }
+
 .bodi{
     padding-top: 26px;
     overflow: hidden;
@@ -24,15 +26,15 @@ h4 {
     background-image: url("backgrounds/back001.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;    
 }
 
 .rajbackinfo {
-    background-color: lightblue;
+    /* background-color: lightblue; */
     /* background-image: url("backgrounds/back007.jpg"); */
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: center;    
 }
 
 .rajbackforgot {
@@ -41,13 +43,13 @@ h4 {
     background-size: cover;
     background-position: center;
 }
+
 .rajbackwelcome{
-    background-image: url("");
+    background-image: url("backgrounds/back009.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     font-size: 20px;
-    font-family: "Times New Roman", Times, serif;
 }
 
 .rajfontbody {
@@ -56,7 +58,6 @@ h4 {
 
 .rajfontheading {
     font-size: 20;
-    font-family: "Times New Roman", Times, serif;
     font-kerning: normal;
 }
 
