@@ -1,8 +1,8 @@
-<?php
+<!-- <?php
 include_once('connection.php');
 $query = "select * from admitted";
 $result = mysql_query($query);
-?>
+?> -->
 
 <!DOCTYPE html>
 <html>
@@ -41,12 +41,10 @@ $result = mysql_query($query);
         </nav> <br> <br> <br>
 
         <div class="container">
-            <center>
-            <table border="1" width="70%">
-                
+            <center>                
 
             <!-- Table for list of admitted patients -->
-            <table class="table table-striped" width=80%>
+            <table border="0" class="table table-striped" width=80%>
                 <thead class="thead-dark">
                     <tr>
                     <th scope="col" >#</th>
@@ -70,14 +68,15 @@ $result = mysql_query($query);
                             <button type="button" class="btn btn-danger">Discharge</button>
                         </td>
                     </tr>
-                    <!-- <tr>
+
+                    <tr>
                         <th scope="row">2</th>
                         <td>Rajab Yassin Juma</td>
                         <td>m</td>
                         <td>A</td>
                         <td>122</td>
                         <td>03/03/1009</td>
-                    </tr> -->
+                    </tr>
 
                     <tr>
                         
@@ -105,6 +104,7 @@ $result = mysql_query($query);
                     
                     $conn-> close();                    
                     ?> -->
+                </tbody>
                    
             </table>
             </center>

@@ -44,26 +44,26 @@
                 </div>
             </div>
 
-            <h3>PATIENT INFORMATIOM</h3>
+            <h3>PATIENT INFORMATION</h3>
             <br> -->
 
-            <form action="">
+            <form action="php/save_patient_info.php" method="POST">
                 <div class="row">
                     <div class="col">
                         <!-- Patient Names -->
                         <p>Patient Names:</p>
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="First name" id="">
+                                <input type="text" class="form-control" placeholder="First name" name="fname">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Middle name" id="">
+                                <input type="text" class="form-control" placeholder="Middle name" name="mname">
                             </div>
                         </div> <br>
 
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Last name" id="">
+                                <input type="text" class="form-control" placeholder="Last name" name="lname">
                             </div>
                             <div class="col"></div>
                         </div> <br>
@@ -73,26 +73,26 @@
                         <p>Address:</p>
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="City" id="">
+                                <input type="text" class="form-control" placeholder="City" name="city">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="State" id="">
+                                <input type="text" class="form-control" placeholder="State" name="state">
                             </div>
                         </div> <br>
                         <!-- Patient Phone Numbers: -->
                         <p>Phone Names:</p>
                         <div class="row">
                             <div class="col">
-                                <input type="number" class="form-control" placeholder="Primary Number" id="">
+                                <input type="number" class="form-control" placeholder="Primary Number" name="phone_no">
                             </div>
                             <div class="col">
-                                <input type="number" class="form-control" placeholder="Work Number" id="">
+                                <input type="number" class="form-control" placeholder="Work Number" name="work_no">
                             </div>
                         </div> <br>
                         <hr>
                         <!-- Patient gender: -->
                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Gender</label>
-                        <select class="custom-select my-1 mr-sm-2">
+                        <select class="custom-select my-1 mr-sm-2" name="gender">
                     <option selected>Choose...</option>
                     <option value="M" id="">Male</option>
                     <option value="F" id="">Female</option>
@@ -101,13 +101,13 @@
                         <!-- Patient Date of Birth -->
                         <p>Date of Birth:</p>
                         <p>
-                            <input type="date" class="form-control" name="bday" id="">
+                            <input type="date" class="form-control" name="bdate">
                         </p>
 
                         <!-- Patient Marital Status -->
                         <!-- <p>Marital Status</p> -->
                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Marital Status</label>
-                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
+                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="marital_status">
                     <option selected>Choose...</option>
                     <option value="single" id="">Single</option>
                     <option value="married" id="">Married</option>
@@ -118,18 +118,19 @@
 
                     <!-- Emergence Section: -->
                     <div class="col">
-                        <h4>INCASE OF EMERGENCE:</h4>
-                        <p>Emergence Contacts:</p>
+                        <h4>INCASE OF EMERGENCY:</h4>
+                        <p>Emergency Contacts:</p>
 
                         <!-- Emergence Names: -->
                         <div class="row">
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="First name" id="">
+                                <input type="text" class="form-control" placeholder="First name" name="em_fname">
                             </div>
                             <div class="col">
-                                <input type="text" class="form-control" placeholder="Last name" id="">
+                                <input type="text" class="form-control" placeholder="Last name" name="em_lname">
                             </div>
                         </div> <br>
+                        <hr>
 
                         <!-- Emergence relationship with the Patient -->
                         <div class="input-group mb-3">
@@ -137,7 +138,7 @@
                                 <span class="input-group-text" id="inputGroup-sizing-default">Relationship with the Patient:</span>
                             </div>
 
-                            <select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg">
+                            <select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="em_relation">
                                 <option selected>Choose...</option>
                                 <option value="parent">Parent</option>
                                 <option value="brother">Brother</option>
@@ -157,16 +158,16 @@
                         <p>Phone Numbers:</p>
                         <div class="row">
                             <div class="col">
-                                <input type="number" class="form-control" placeholder="Primary Number" id="">
+                                <input type="number" class="form-control" placeholder="Primary Number" name="em_phone_no">
                             </div>
                             <div class="col">
-                                <input type="number" class="form-control" placeholder="Work Number" id="">
+                                <input type="number" class="form-control" placeholder="Work Number" name="em_work_no">
                             </div>
                         </div> <br>
                         <hr>
 
                         <!-- if patient is taking any medication before visit to the hospital -->
-                        <p>Is the patient takin any Medication?</p>
+                        <p>Is the patient taking any Medication?</p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Radios" id="yestaking" value="option1">
                             <label class="form-check-label" for="yestaking">
@@ -174,7 +175,7 @@
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Radios" id="notaking" value="option2" checked>
+                            <input class="form-check-input" type="radio" name="Radios" id="notaking" value="option2">
                             <label class="form-check-label" for="notaking">
                                 NO
                             </label> <br> <br>
@@ -183,7 +184,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">If Yes, <br> Please List <br> them here</span>
                                 </div>
-                                <textarea rows="5" class="form-control" aria-label="With textarea"></textarea>
+                                <textarea rows="5" class="form-control" aria-label="With textarea" name="em_medicine"></textarea>
                             </div>
                         </div> <br>
                         <hr> <br>
@@ -199,7 +200,6 @@
                                 </a>
                             </div>
                         </div>
-
 
 
                     </div>
