@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Patient Information</title>
+    <title>Nurse Information</title>
 
     <!-- OFFLINE BOOTSTRAP FOR CSS -->
     <link rel="stylesheet" href="bootstrap4/css/bootstrap.css" />
@@ -44,32 +44,28 @@
                 </div>
             </div>
 
-            <h3>PATIENT INFORMATION</h3>
+            <h3>NURSE INFORMATION</h3>
             <br> -->
 
-            <form action="php/save_patient_info.php" method="POST">
+            <form action="php/save_nurse_info.php" method="POST">
                 <div class="row">
                     <div class="col">
-                        <!-- Patient Names -->
-                        <p>Patient Names:</p>
+                        <!-- Nurse Names -->
+                        <p>Nurse Names:</p>
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="First name" name="fname">
                             </div>
-                            <div class="col">
-                                <input type="text" class="form-control" placeholder="Middle name" name="mname">
-                            </div>
-                        </div> <br>
 
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Last name" name="lname">
                             </div>
                             <div class="col"></div>
-                        </div> <br>
+                        </div> <br><br>
 
                         <hr>
-                        <!-- Patient Address -->
+                        <!-- Nurse Address -->
                         <p>Address:</p>
                         <div class="row">
                             <div class="col">
@@ -79,7 +75,7 @@
                                 <input type="text" class="form-control" placeholder="State" name="state">
                             </div>
                         </div> <br>
-                        <!-- Patient Phone Numbers: -->
+                        <!-- Nurse Phone Numbers: -->
                         <p>Phone Numbers:</p>
                         <div class="row">
                             <div class="col">
@@ -90,24 +86,23 @@
                             </div>
                         </div> <br>
                         <hr>
-                        <!-- Patient gender: -->
+                        <!-- Nurse gender: -->
                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Gender</label>
                         <select class="custom-select my-1 mr-sm-2" name="gender">
                     <option selected value=""></option>
                     <option value="M" id="">Male</option>
                     <option value="F" id="">Female</option>
-                    <option value="N/A" id="">N/A</option>
                 </select> <br> <br>
-                        <!-- Patient Date of Birth -->
+                        <!-- Nurse Date of Birth -->
                         <p>Date of Birth:</p>
                         <p>
                             <input type="date" class="form-control" name="bdate">
                         </p>
 
-                        <!-- Patient Marital Status -->
+                        <!-- Nurse Marital Status -->
                         <!-- <p>Marital Status</p> -->
                         <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Marital Status</label>
-                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="marital_status" placeholder="Choose">
+                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="marital_status">
                     <option selected value=""></option>
                     <option value="single" id="">Single</option>
                     <option value="married" id="">Married</option>
@@ -115,13 +110,38 @@
                     <option value="widowed" id="">Widowed</option>
                 </select>
                     </div> <br>
+                    <hr>
 
-                    <!-- Emergence Section: -->
+                     <!-- Nurse Ward -->
+                     <p>Ward Number:</p>
+                     <div class="row">
+                         <div class="col">
+                             <input type="text" class="form-control" placeholder="Ward Number" name="ward_number">
+                         </div><br>
+                         <p>Nurse ID:</p>
+                         <div class="col">
+                            <input type="number" class="form-control" placeholder="Nurse ID" name="nurse_id">
+                        </div>
+                     </div> <br>
+
+                     <!-- Nurse Password -->
+                     <p>Password to login to the system with:</p>
+                     <div class="row">
+                         <div class="col">
+                             <input type="password" class="form-control" placeholder="Password" name="pwd" id="pwd" onkeyup='check();'>
+                         </div><br>
+                         <div class="col">
+                            <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_pwd" id="confirm_pwd" onkeyup='check();'>
+                        </div>
+                        <span id="message"></span>
+                     </div> <br>
+
+                    <!-- Emergency Section: -->
                     <div class="col">
-                        <h4>INCASE OF EMERGENCY:</h4>
+                        <h4>Next of Kin</h4>
                         <p>Emergency Contacts:</p>
 
-                        <!-- Emergence Names: -->
+                        <!-- Emergency Names: -->
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="First name" name="em_fname">
@@ -132,14 +152,14 @@
                         </div> <br>
                         <hr>
 
-                        <!-- Emergence relationship with the Patient -->
+                        <!-- Relationship with the Nurse -->
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroup-sizing-default">Relationship with the Patient:</span>
+                                <span class="input-group-text" id="inputGroup-sizing-default">Relationship with the Nurse:</span>
                             </div>
 
                             <select class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-lg" name="em_relation">
-                                <option selected value="">Choose...</option>
+                                <option selected value=""></option>
                                 <option value="parent">Parent</option>
                                 <option value="brother">Brother</option>
                                 <option value="sister">Sister</option>
@@ -154,7 +174,7 @@
                         </div> <br>
                         <hr>
 
-                        <!-- Emergence Contacts: -->
+                        <!-- Emergency Contacts: -->
                         <p>Phone Numbers:</p>
                         <div class="row">
                             <div class="col">
@@ -166,7 +186,7 @@
                         </div> <br>
                         <hr>
 
-                        <!-- if patient is taking any medication before visit to the hospital -->
+                        <!-- if patient is taking any medication before visit to the hospital 
                         <p>Is the patient taking any Medication?</p>
                         <div class="form-check">
                             <input class="form-check-input" type="radio" name="Radios" id="yestaking" value="option1">
@@ -186,7 +206,7 @@
                                 </div>
                                 <textarea rows="5" class="form-control" aria-label="With textarea" name="em_medicine"></textarea>
                             </div>
-                        </div> <br>
+                        </div> <br> -->
                         <hr> <br>
 
                         <div class="row">
@@ -222,5 +242,18 @@
     </center>
 
 </body>
+
+<script>
+var check = function(){
+    if(document.getElementById('pwd').value != document.getElementById('confirm_pwd').value) {
+        document.getElementById('message').style.color = 'red';
+        document.getElementById('message').innerHTML = 'Passwords not matching';
+    }
+    else {
+        document.getElementById('message').style.color = 'green';
+        document.getElementById('message').innerHTML = 'Passwords matching';
+    }
+}
+</script>
 
 </html>
