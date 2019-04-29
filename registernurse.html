@@ -37,16 +37,6 @@
 
         <div class="container">
 
-            <!-- Row for Name of Hospital and its icon -->
-            <!-- <div class="row">
-                <div class="col">
-                    <h1>RAJAB AND FAMILY CARE CENTER</h1>
-                </div>
-            </div>
-
-            <h3>NURSE INFORMATION</h3>
-            <br> -->
-
             <form action="php/save_nurse_info.php" method="POST">
                 <div class="row">
                     <div class="col">
@@ -55,16 +45,14 @@
                         <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="First name" name="fname">
-                            </div>
+                            </div>                       
 
-                        <div class="row">
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Last name" name="lname">
-                            </div>
-                            <div class="col"></div>
-                        </div> <br><br>
-
-                        <hr>
+                            </div>                            
+                        </div> <br>
+                        <!-- <hr> -->
+                        
                         <!-- Nurse Address -->
                         <p>Address:</p>
                         <div class="row">
@@ -75,6 +63,7 @@
                                 <input type="text" class="form-control" placeholder="State" name="state">
                             </div>
                         </div> <br>
+
                         <!-- Nurse Phone Numbers: -->
                         <p>Phone Numbers:</p>
                         <div class="row">
@@ -85,59 +74,72 @@
                                 <input type="number" class="form-control" placeholder="Work Number" name="work_no">
                             </div>
                         </div> <br>
-                        <hr>
+                        <!-- <hr> -->
+
                         <!-- Nurse gender: -->
-                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Gender</label>
-                        <select class="custom-select my-1 mr-sm-2" name="gender">
-                    <option selected value=""></option>
-                    <option value="M" id="">Male</option>
-                    <option value="F" id="">Female</option>
-                </select> <br> <br>
+                        <p>Gender</p>
+                        <div class="row">
+                            <div class="col">
+                                <select class="custom-select my-1 mr-sm-2" name="gender">
+                                    <option selected value=""></option>
+                                    <option value="M" id="">Male</option>
+                                    <option value="F" id="">Female</option>
+                                </select>
+                            </div>
+                        </div> <br>
+
                         <!-- Nurse Date of Birth -->
                         <p>Date of Birth:</p>
-                        <p>
-                            <input type="date" class="form-control" name="bdate">
-                        </p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="date" class="form-control" name="bdate">
+                            </div>
+                        </div> <br>
 
                         <!-- Nurse Marital Status -->
-                        <!-- <p>Marital Status</p> -->
-                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Marital Status</label>
-                        <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="marital_status">
-                    <option selected value=""></option>
-                    <option value="single" id="">Single</option>
-                    <option value="married" id="">Married</option>
-                    <option value="divorced" id="">Divorced</option>
-                    <option value="widowed" id="">Widowed</option>
-                </select>
-                    </div> <br>
-                    <hr>
+                        <p>Marital Status</p>
+                        <div class="row">
+                            <div class="col">
+                                <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref" name="marital_status">
+                                    <option selected value=""></option>
+                                    <option value="single" id="">Single</option>
+                                    <option value="married" id="">Married</option>
+                                    <option value="divorced" id="">Divorced</option>
+                                    <option value="widowed" id="">Widowed</option>
+                                </select>
+                            </div>
+                        </div>                        
+                    </div>
 
-                     <!-- Nurse Ward -->
-                     <p>Ward Number:</p>
-                     <div class="row">
-                         <div class="col">
-                             <input type="text" class="form-control" placeholder="Ward Number" name="ward_number">
-                         </div><br>
-                         <p>Nurse ID:</p>
-                         <div class="col">
-                            <input type="number" class="form-control" placeholder="Nurse ID" name="nurse_id">
-                        </div>
-                     </div> <br>
-
-                     <!-- Nurse Password -->
-                     <p>Password to login to the system with:</p>
-                     <div class="row">
-                         <div class="col">
-                             <input type="password" class="form-control" placeholder="Password" name="pwd" id="pwd" onkeyup='check();'>
-                         </div><br>
-                         <div class="col">
-                            <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_pwd" id="confirm_pwd" onkeyup='check();'>
-                        </div>
-                        <span id="message"></span>
-                     </div> <br>
-
-                    <!-- Emergency Section: -->
                     <div class="col">
+
+                        <!-- Nurse Ward -->
+                        <p>Ward:</p>
+                        <div class="row">                          
+                            <div class="col">
+                                <input type="text" class="form-control" placeholder="Ward Number" name="ward_number">
+                            </div><br>
+                            <!-- <p>Nurse ID:</p> -->
+                            <div class="col">
+                                <input type="number" class="form-control" placeholder="Nurse ID" name="nurse_id">
+                            </div>
+                        </div>
+                        <br>
+
+                        <!-- Nurse Password -->
+                        <p>Password to login to the system with:</p>
+                        <div class="row">
+                            <div class="col">
+                                <input type="password" class="form-control" placeholder="Password" name="pwd" id="pwd" onkeyup='check();'>
+                            </div><br>
+                            <div class="col">
+                                <input type="password" class="form-control" placeholder="Confirm Password" name="confirm_pwd" id="confirm_pwd" onkeyup='check();'>
+                            </div>
+                            <!-- <span id="message"></span> -->
+                        </div> <br>
+                        <hr> <br>
+
+                        <!-- Emergency Section: -->
                         <h4>Next of Kin</h4>
                         <p>Emergency Contacts:</p>
 
@@ -149,9 +151,9 @@
                             <div class="col">
                                 <input type="text" class="form-control" placeholder="Last name" name="em_lname">
                             </div>
-                        </div> <br>
-                        <hr>
-
+                        </div> <br> <br>
+                        <!-- <hr> -->
+    
                         <!-- Relationship with the Nurse -->
                         <div class="input-group mb-3">
                             <div class="input-group-prepend">
@@ -169,10 +171,10 @@
                                 <option value="friend">Friend</option>
                             </select>
 
-
                             <!-- <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"> -->
+
                         </div> <br>
-                        <hr>
+                        <!-- <hr> -->
 
                         <!-- Emergency Contacts: -->
                         <p>Phone Numbers:</p>
@@ -183,77 +185,43 @@
                             <div class="col">
                                 <input type="number" class="form-control" placeholder="Work Number" name="em_work_no">
                             </div>
-                        </div> <br>
-                        <hr>
-
-                        <!-- if patient is taking any medication before visit to the hospital 
-                        <p>Is the patient taking any Medication?</p>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Radios" id="yestaking" value="option1">
-                            <label class="form-check-label" for="yestaking">
-                                YES
-                            </label>
                         </div>
-                        <div class="form-check">
-                            <input class="form-check-input" type="radio" name="Radios" id="notaking" value="option2">
-                            <label class="form-check-label" for="notaking">
-                                NO
-                            </label> <br> <br>
-
-                            <div class="input-group">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">If Yes, <br> Please List <br> them here</span>
-                                </div>
-                                <textarea rows="5" class="form-control" aria-label="With textarea" name="em_medicine"></textarea>
-                            </div>
-                        </div> <br> -->
-                        <hr> <br>
-
-                        <div class="row">
-                            <div class="col"></div>
-                            <div class="col"></div>
-                            <div class="col">
-                                <!-- Reset and Submit Buttons -->
-                                <input type="reset" class="btn btn-warning" name="reset" value="Reset">
-                                <a href="precriptionPage.html">
-                                    <input type="submit" class="btn btn-primary" name="submit" value="Submit" onclick="">
-                                </a>
-                            </div>
-                        </div>
-
-
+                        <!-- <hr> <br> -->
                     </div>
                 </div>
+                <hr>
+
+                <!-- Row for Submit and Reset buttons -->
+                <div class="row">
+                    <div class="col"></div>
+                    <div class="col"></div>
+                    <div class="col">                        
+                        <!-- Reset and Submit Buttons -->
+                        <input type="reset" class="btn btn-warning" name="reset" value="Reset">
+                        <a href="">
+                            <input type="submit" class="btn btn-primary" name="submit" value="Submit" onclick="">
+                        </a>
+                    </div>
+                </div>
+
             </form>
-            <br> <br>
+            <br>
             <hr>
-
-            <div class="row container-fluid">
-
-            </div>
-
-            <!-- <div class="row">
-                <nav class="navbar fixed-bottom navbar-light bg-light">
-                    <a class="navbar-brand" href="#">Fixed bottom</a>
-                </nav>
-            </div> -->
-
         </div>
     </center>
-
 </body>
 
 <script>
-var check = function(){
-    if(document.getElementById('pwd').value != document.getElementById('confirm_pwd').value) {
-        document.getElementById('message').style.color = 'red';
-        document.getElementById('message').innerHTML = 'Passwords not matching';
+    var check = function(){
+        if(document.getElementById('pwd').value != document.getElementById('confirm_pwd').value) {
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = 'Passwords not matching';
+        }
+        else {
+            document.getElementById('message').style.color = 'green';
+            document.getElementById('message').innerHTML = 'Passwords matching';
+        }
     }
-    else {
-        document.getElementById('message').style.color = 'green';
-        document.getElementById('message').innerHTML = 'Passwords matching';
-    }
-}
 </script>
 
 </html>
