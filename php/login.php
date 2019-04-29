@@ -4,26 +4,33 @@ if(isset($_POST["submit"]))
  
 if(count($_POST)>0) 
 {
- //Including dbconfig file.
-include 'dbconfig.php';
+ //Including db_connection file.
+include 'db_connection.php';
+OpenCon();
+$conn = new mysqli("localhost", "root", "","mrs") or die("Connection failed: %s\n". $conn -> error);
  
-$email = $_POST["email"];
+$username = $_POST["username"];
 
-$password = $_POST["password"];
+$password = $_POST["loginpwd"];
 
-$EncryptPassword = md5($password);
+$EncryptPassword = sha1($password);
 
-$finalResult = mysql_query("SELECT * FROM signup WHERE email='$email' and Password = '$EncryptPassword'"); 
+//search for matching password in database
+$finalResult = mysqli_query($conn, "SELECT * FROM nurse WHERE username='$username' and password = '$EncryptPassword'"); 
 
-$confirm = mysql_fetch_array($finalResult);
+$confirm = mysqli_fetch_array($finalResult);
 
+//if true then start session
 if(is_array($confirm)) {
  
  session_start();
  $_SESSION['sid']=session_id();
- header("location:dashboard.php");
+ header("location:../welcomePage.html");
 
-} else {
+} 
+
+//if false then display error msg
+else {
  
 
 echo '<center>' . "Wrong UserName or Password..." . '</center>';
