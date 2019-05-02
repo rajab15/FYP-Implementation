@@ -41,13 +41,13 @@
             <table border="0" class="table table-striped" width=80%>
                 <thead class="thead-dark">
                     <tr>
-                    <th scope="col" >#</th>
-                    <th scope="col" width=35%>Patient Names:</th>
+                    <th scope="col" width=7%>Patient ID</th>
+                    <th scope="col" width=35%>Patient Names</th>
                     <th scope="col" width=10%>Gender</th>
                     <th scope="col" width=10%>Ward</th>
                     <th scope="col" width=10%>Bed No.</th>
                     <th scope="col" width=18%>Discharge Date</th>
-                    <th scope="col" width=12%></th>
+                    <th scope="col" width=5%></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -73,31 +73,14 @@
                     </tr>
 
                     <tr>
+                        <?php 
+                        include 'php/fetch_patients.php';
+                        ?>
                         
                     </tr>
 
                     <!-- PHP for fetching names from the database -->
-                    <!-- <?php
-                    $conn = mysqli_connect("localhost", "root", "", "");
-                    if ($conn-> connect_error) {
-                        die("Connection failed:". $conn-> connect_error);
-                    }
-
-                    $sql = "SELECT id, username, password from admitted";
-                    $result = $conn-> query($sql);
-
-                    if ($result-> num_rows > 0) {
-                        while ($row = $result-> fetch_assoc()) {
-                            echo "<tr><td>". $row["#"]."</td><td>". $row["Patient Names:"]."</td><td>". $row["Gender"]."</td><td>". $row["Ward"]."</td><td>". $row["Bed No."]."</td><td>". $row["Discharge Date"]."</td></tr>";
-                        }
-                        echo "</tbody>";
-                    }
-                    else {
-                        echo "0 result";
-                    }
                     
-                    $conn-> close();                    
-                    ?> -->
                 </tbody>
                    
             </table>
