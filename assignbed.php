@@ -37,22 +37,40 @@
 
         
         <div class="container">
-            <form action="">
+            <form action="php/assign_bed.php" method="POST">
                 <table class="table table-striped table-bordered" width=60%>
                     <thead class="thead-dark">
                         <tr>
-                            <th scope="col" width= >Ward No.</th>
-                            <th scope="col" width= >Bed No.</th>
-                            <th scope="col" width= >Assign:</th>
+                            <th scope="col" width= >Patient Details</th>
+                            <th scope="col" width= >Ward Details</th>
                         </tr>
                     </thead>
 
                     <tbody>
                         <tr>
-                            <td scope="col">A</td>
-                            <td scope="col">1</td>
                             <td scope="col">
-                                <button type="button" class="btn btn-success">Assign</button>
+                                <!--<form  action="php/assign_bed.php" method="POST"> -->
+                                Patient ID: <br>
+                                <input type="number" class="form-control" placeholder="Enter Patient ID" name="patient_id">
+                                <br>
+                                Ward Number: <br>
+                                <input type="number" class="form-control" placeholder="Enter Ward Number" name="ward_no">
+                                <br>
+                                Bed Number : <br>
+                                <input type="number" class="form-control" placeholder="Enter Bed Number" name="bed_no">
+                                <br>
+                                Admission Date: <br>
+                                <input type="date" class="form-control" placeholder="Enter PAdmission Date" name="admission_date">
+                                <br>
+                                Expected Release Date: (Optional): <br>
+                                <input type="date" class="form-control" placeholder="Enter Patient ID" name="release_date">
+                                <br>
+                                <input type="submit" class="btn btn-success" value="Assign">
+                                
+                            </td>
+                            
+                            <td scope="col" width="30%">
+                                <?php include 'php/ward_data.php' ?>
                             </td>
                         </tr>
                     </tbody>

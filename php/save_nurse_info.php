@@ -56,7 +56,7 @@ VALUES ('$id', '$fname', '$lname',  '$phone_no', '$work_no', '$city', '$state', 
 if (!mysqli_query($conn,$sql)) {
   die('Error: ' . mysqli_error($conn));
 }
-echo "Record added";
+echo "Nurse Record added";
 
 CloseCon($conn);
 //mysqli_close($conn);
