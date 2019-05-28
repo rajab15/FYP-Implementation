@@ -1,6 +1,6 @@
 <?php
 //include db connection
-include 'db_connection.php';
+//include 'db_connection.php';
 
 $conn = OpenCon();
 
@@ -20,7 +20,7 @@ if ($result-> num_rows > 0) {
                 $gender = $row2['gender'];
             }
         }
-        echo "<tr><td>". $row['patient_id']."</td><td>$full_name</td><td>$gender</td><td>". $row['ward_no']."</td><td>". $row['bed_no']."</td><td>". $row['release_date']."</td><td><button type='button' class='btn btn-danger'>Discharge</button></td></tr>";
+        echo "<tr><td>". $row['patient_id']."</td><td>$full_name</td><td>$gender</td><td>". $row['ward_no']."</td><td>". $row['bed_no']."</td><td>". $row['release_date']."</td></tr>";
         }
         echo "</tbody>";
         }

@@ -22,10 +22,15 @@ $confirm = mysqli_fetch_array($finalResult);
 
 //if true then start session
 if(is_array($confirm)) {
+    echo $username;
+    
+    session_start();
+    $_SESSION['sid']=session_id();
+    $_SESSION['username'] = "$username";
+    $names = $line['first_name']." ".$line['last_name'] ;
+    $_SESSION['nurse_names'] = "$names" ;
  
- session_start();
- $_SESSION['sid']=session_id();
- header("location:../welcomePage.html");
+header("location:../home.php");
 
 } 
 
