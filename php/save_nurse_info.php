@@ -10,7 +10,7 @@ OpenCon();
 $conn = OpenCon();
 
 $id = $_POST["nurse_id"];
- 
+
 $fname = $_POST["fname"];
 
 $lname = $_POST["lname"];

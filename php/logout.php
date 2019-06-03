@@ -7,5 +7,5 @@ session_unset();
 session_destroy(); 
 
 //go to index
-header("location:../page-login.html");
+header("location:../index.html");
 ?>
