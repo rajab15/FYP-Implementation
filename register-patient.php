@@ -100,7 +100,7 @@
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Nurse</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.html" class="">Profile</a></li>
+									<li><a href="page-profile.php" class="">Profile</a></li>
 									<li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
 								</ul>
 							</div>
