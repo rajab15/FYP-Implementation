@@ -1,9 +1,9 @@
 <?php
 
  //Including db_connection file.
-include 'db_connection.php';
+//include 'db_connection.php';
 
-$conn = OpenCon();
+//$conn = OpenCon();
 $counter = 0;
 
 

@@ -7,19 +7,16 @@
 <html lang="en">
 
 <head>
-	<title>Assign Bed | MRS - Medicine Reminding System</title>
+	<title>Register Patient | MRS - Medicine Reminding System</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 	<!-- VENDOR CSS -->
 	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
-
-
+	<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
 	<!-- MAIN CSS -->
-    <link rel="stylesheet" href="assets/css/main.css">
-    
+	<link rel="stylesheet" href="assets/css/main.css">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
@@ -111,73 +108,101 @@
 						</ul>
 				</nav>
 			</div>
-        </div>
-             
-
+		</div>
 		<!-- END LEFT SIDEBAR -->
 		<!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Assign bed to patient</h3>
+					<h3 class="page-title">Patient prescriptions</h3>
 					<div class="row">
 						<div class="col-md-12">
 							<!-- PANEL HEADLINE -->
 							<div class="panel panel-headline">
 								<div class="panel-heading">
-									<h3 class="panel-title">Assign Bed</h3>
-									<p class="panel-subtitle">Please select bed and ward to assign</p>
+									<h3 class="panel-title">Prescriptions</h3>
+									<p class="panel-subtitle">Enter patient prescriptions</p>
 								</div>
 								<div class="panel-body">
-								<form action="php/assign_bed.php" method="POST">
-                <table class="table table-striped table-bordered" width=60%>
-                    <thead class="thead-dark">
-                        <tr>
-                            <th scope="col" width= >Patient Details</th>
-                            <th scope="col" width= >Ward Details</th>
-                        </tr>
-                    </thead>
+                                    <form action="">
 
-                    <tbody>
-                        <tr>
-                            <td scope="col">
-                                <!--<form  action="php/assign_bed.php" method="POST"> -->
-                                Patient ID: <br>
-                                <input type="number" class="form-control" placeholder="Enter Patient ID" name="patient_id" required>
-                                <br>
-                                Ward Number: <br>
-                                <input type="number" class="form-control" placeholder="Enter Ward Number" name="ward_no" required>
-                                <br>
-                                Bed Number : <br>
-                                <input type="number" class="form-control" placeholder="Enter Bed Number" name="bed_no" required>
-                                <br>
-                                Admission Date: <br>
-                                <input type="date" class="form-control" placeholder="Enter PAdmission Date" name="admission_date" required>
-                                <br>
-                                Expected Release Date: (Optional): <br>
-                                <input type="date" class="form-control" placeholder="Enter Patient ID" name="release_date">
-                                <br>
-                                <input type="submit" class="btn btn-success" value="Assign">
-                                
-                            </td>
-                            
-                            <td scope="col" width="30%">
-                                <?php include 'php/ward_data.php' ?>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </form>
+                                        <!-- Table for entering Prescriptions -->
+                                        <table border="0" class="table table-bordered">
+                                            <tr>
+                                                <th colspan="6">
+                                                    Patient prescriptions administration:
+                                                </th>
+                                            </tr>
+                                            <tr>
+                                                <th width="30%">Product *</th>
+                                                <td colspan="5"> <input type="text" class="form-control" name="" placeholder="Medicine Name" required> </td>
+                                            </tr>
+                                            <tr>
+                                                <th> Dose *</th>
+                                                <td colspan="5">
+                                                    <div class="input-group">
+                                                        <input type="number" class="form-control" placeholder="Pills" name="" required>
+                                                        <input type="number" class="form-control" placeholder="Times per day" name="" required>
+                                                        <!-- <input type="text" class="form-control" placeholder="">
+                                                        <input type="text" class="form-control" placeholder=""> -->
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Starting date *</th>
+                                                <td colspan="5"><input type="date" class="form-control" name="bday" id="" placeholder="Starting Date" required></td>
+                                            </tr>
+                                            <tr>
+                                                <th>Final date *</th>
+                                                <td colspan="5">
+                                                    <input type="date" class="form-control" name="bday" placeholder="Finishing Date" required>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Packings *</th>
+                                                <td colspan="5"><input type="number" class="form-control" name="" id="" placeholder="Total Pills" required> </td>
+                                            </tr>
+                                            <tr>
+                                                <th>Times *</th>
+                                                <td> <input type="text" class="form-control" name="" id="med_time" style="width:80px"></td> 
+                                                <td><input type="text" class="form-control" name="" id="med_time" style="width:80px" ></td>
+                                                <td><input type="text" class="form-control" name="" id="med_time" style="width:80px" ></td>
+                                                <td><input type="text" class="form-control" name="" id="med_time" style="width:80px" ></td>
+                                                <td><input type="text" class="form-control" name="" id="med_time" style="width:80px" ></td>
+                                                
+                                            </td>
+                                            </tr>
+                                        </table> <br>
+
+                                        <table border="0" width=70%>
+                                            <tr>
+                                                <td>
+                                                    <div class="row">
+                                                        <div class="col"></div>
+                                                        <div class="col"></div>
+                                                        <!-- <div class="col"></div> -->
+                                                        <div class="col">
+                                                            <input type="reset" class="btn btn-warning" name="resetprescription" value="Reset">
+                                                            <input type="submit" class="btn btn-primary" name="saveprescription" value="Save">
+                                                        </div>
+                                                        <div class="col"></div>
+                                                        <!-- <div class="col"></div> -->
+                                                    </div>
+
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </form>
 									
 								</div>
 							</div>
 							<!-- END PANEL HEADLINE -->
 						</div>
 						
-
-						</div>
 					</div>
+					
+					
 				</div>
 			</div>
 			<!-- END MAIN CONTENT -->
