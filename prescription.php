@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-	<title>Register Patient | MRS - Medicine Reminding System</title>
+	<title>Patient Prescription | MRS - Medicine Reminding System</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -125,7 +125,7 @@
 									<p class="panel-subtitle">Enter patient prescriptions</p>
 								</div>
 								<div class="panel-body">
-                                    <form action="">
+                                    <form action="php/save_prescription.php" method="POST"
 
                                         <!-- Table for entering Prescriptions -->
                                         <table border="0" class="table table-bordered">
@@ -136,14 +136,18 @@
                                             </tr>
                                             <tr>
                                                 <th width="30%">Product *</th>
-                                                <td colspan="5"> <input type="text" class="form-control" name="" placeholder="Medicine Name" required> </td>
+                                                <td colspan="5"> <input type="text" class="form-control" name="medicine_name" placeholder="Medicine Name" required> </td>
+                                            </tr>
+                                            <tr>
+                                                <th width="30%">Patient ID *</th>
+                                                <td colspan="5"> <input type="text" class="form-control" name="patient_id" placeholder="Patient ID" required> </td>
                                             </tr>
                                             <tr>
                                                 <th> Dose *</th>
                                                 <td colspan="5">
                                                     <div class="input-group">
-                                                        <input type="number" class="form-control" placeholder="Pills" name="" required>
-                                                        <input type="number" class="form-control" placeholder="Times per day" name="" required>
+                                                        <input type="number" class="form-control" placeholder="Pills/ml" name="pills_ml" required>
+                                                        <input type="number" class="form-control" placeholder="Times per day" name="times_per_day" required>
                                                         <!-- <input type="text" class="form-control" placeholder="">
                                                         <input type="text" class="form-control" placeholder=""> -->
                                                     </div>
@@ -151,25 +155,17 @@
                                             </tr>
                                             <tr>
                                                 <th>Starting date *</th>
-                                                <td colspan="5"><input type="date" class="form-control" name="bday" id="" placeholder="Starting Date" required></td>
+                                                <td colspan="5"><input type="date" class="form-control" name="start_day" id="" placeholder="Starting Date" required></td>
                                             </tr>
-                                            <tr>
-                                                <th>Final date *</th>
-                                                <td colspan="5">
-                                                    <input type="date" class="form-control" name="bday" placeholder="Finishing Date" required>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <th>Packings *</th>
-                                                <td colspan="5"><input type="number" class="form-control" name="" id="" placeholder="Total Pills" required> </td>
-                                            </tr>
+                                            
+                                            
                                             <tr>
                                                 <th>Times *</th>
-                                                <td> <input type="text" class="form-control" name="" id="med_time" style="width:80px"></td> 
-                                                <td><input type="text" class="form-control" name="" id="med_time" style="width:80px" ></td>
-                                                <td><input type="text" class="form-control" name="" id="med_time" style="width:80px" ></td>
-                                                <td><input type="text" class="form-control" name="" id="med_time" style="width:80px" ></td>
-                                                <td><input type="text" class="form-control" name="" id="med_time" style="width:80px" ></td>
+                                                <td align="center"><input type="time" class="form-control" name="time1" id="med_time" style="width:100px" required></td> 
+                                                <td align="center"><input type="time" class="form-control" name="time2" id="med_time" style="width:100px" ></td>
+                                                <td align="center"><input type="time" class="form-control" name="time3" id="med_time" style="width:100px" ></td>
+                                                <td align="center"><input type="time" class="form-control" name="time4" id="med_time" style="width:100px" ></td>
+                                                <td align="center"><input type="time" class="form-control" name="time5" id="med_time" style="width:100px" ></td>
                                                 
                                             </td>
                                             </tr>
