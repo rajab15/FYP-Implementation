@@ -16,7 +16,7 @@
 	<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="assets/css/main.css">
-	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+	
 	<link rel="stylesheet" href="assets/css/demo.css">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
@@ -85,6 +85,7 @@
 			</div>
 		</nav>
 		<!-- END NAVBAR -->
+
 		<!-- LEFT SIDEBAR -->
 		<div id="sidebar-nav" class="sidebar">
 			<div class="sidebar-scroll">
@@ -110,6 +111,7 @@
 			</div>
 		</div>
 		<!-- END LEFT SIDEBAR -->
+
 		<!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
@@ -142,15 +144,16 @@
 									</div>
 								</div>
 								<!-- END PROFILE HEADER -->
+
 								<!-- PROFILE DETAIL -->
 								<div class="profile-detail">
 									<div class="profile-info">
 										<h4 class="heading">Basic Info</h4>
 										<ul class="list-unstyled list-justify">
 											<li>Birthdate <span><?php echo $_SESSION['birth_date']; ?> </span></li>
-											<li>Mobile <span><?php echo $_SESSION['phone_no']; ?></span></li>
-											<li>Email <span>samuel@mydomain.com</span></li>
-											<li>Website <span><a href="https://www.themeineed.com">www.themeineed.com</a></span></li>
+											<li>Mobile <span> <?php echo $_SESSION['phone_no']; ?> </span></li>
+											<li>Address <span> <?php echo $_SESSION['state']; ?> </span></li>
+											<!-- <li>Website <span><a href="https://www.themeineed.com">www.themeineed.com</a></span></li> -->
 										</ul>
 									</div>
 									<div class="profile-info">
@@ -158,22 +161,23 @@
 										<ul class="list-inline social-icons">
 											<li><a href="#" class="facebook-bg"><i class="fa fa-facebook"></i></a></li>
 											<li><a href="#" class="twitter-bg"><i class="fa fa-twitter"></i></a></li>
-											<li><a href="#" class="google-plus-bg"><i class="fa fa-google-plus"></i></a></li>
+											<!-- <li><a href="#" class="google-plus-bg"><i class="fa fa-google-plus"></i></a></li> -->
 											<li><a href="#" class="github-bg"><i class="fa fa-github"></i></a></li>
 										</ul>
 									</div>
 									<div class="profile-info">
 										<h4 class="heading">About</h4>
-										<p>Interactively fashion excellent information after distinctive outsourcing.</p>
+										<p>Professional nurse.</p>
 									</div>
 									<div class="text-center"><a href="#" class="btn btn-primary">Edit Profile</a></div>
 								</div>
-								<!-- END PROFILE DETAIL -->
+								<!-- END PROFILE DETAIL -->								
 							</div>
 							<!-- END LEFT COLUMN -->
+
 							<!-- RIGHT COLUMN -->
 							<div class="profile-right">
-								<h4 class="heading">Samuel's Awards</h4>
+								<h4 class="heading"> <?php echo $_SESSION['nurse_names']; ?>'s Awards</h4>
 								<!-- AWARDS -->
 								<div class="awards">
 									<div class="row">
@@ -210,14 +214,15 @@
 											</div>
 										</div>
 									</div>
-									<div class="text-center"><a href="#" class="btn btn-default">See all awards</a></div>
+									<!-- <div class="text-center"><a href="#" class="btn btn-default">See all awards</a></div> -->
 								</div>
 								<!-- END AWARDS -->
+
 								<!-- TABBED CONTENT -->
 								<div class="custom-tabs-line tabs-line-bottom left-aligned">
 									<ul class="nav" role="tablist">
 										<li class="active"><a href="#tab-bottom-left1" role="tab" data-toggle="tab">More Info</a></li>
-										<li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li>
+										<!-- <li><a href="#tab-bottom-left2" role="tab" data-toggle="tab">Projects <span class="badge">7</span></a></li> -->
 									</ul>
 								</div>
 								<div class="tab-content">
@@ -267,7 +272,9 @@
 										</ul> -->
 										<div class="margin-top-30 text-center"><a href="#" class="btn btn-default">See all activity</a></div>
 									</div>
-									<div class="tab-pane fade" id="tab-bottom-left2">
+
+
+									<!-- <div class="tab-pane fade" id="tab-bottom-left2">
 										<div class="table-responsive">
 											<table class="table project-table">
 												<thead>
@@ -354,7 +361,8 @@
 												</tbody>
 											</table>
 										</div>
-									</div>
+									</div> -->
+									
 								</div>
 								<!-- END TABBED CONTENT -->
 							</div>
