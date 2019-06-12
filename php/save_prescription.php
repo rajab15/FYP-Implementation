@@ -15,8 +15,6 @@ $medicine = $_POST["medicine_name"];
 
 $dose = $_POST["pills_ml"];
 
-$nurse_id = $_SESSION['nurse_id'];
-
 $start_date = $_POST["start_day"];
 
 $time1 = $_POST["time1"];
@@ -43,8 +41,8 @@ if (isset($_POST["time5"]) && !empty($_POST["time5"])) {
 }
 
 
-$sql = "INSERT INTO prescription (patient_id, medicine, date, nurse_id, dose, time1, time2, time3, time4, time5) 
-VALUES ('$patient_id', '$medicine', '$start_date',  '$nurse_id', '$dose', '$time1', '$time2', '$time3', '$time4', '$time5')";
+$sql = "INSERT INTO prescription (patient_id, medicine, date, dose, time1, time2, time3, time4, time5) 
+VALUES ('$patient_id', '$medicine', '$start_date', '$dose', '$time1', '$time2', '$time3', '$time4', '$time5')";
 
 if (!mysqli_query($conn,$sql)) {
   die('Error: ' . mysqli_error($conn));
