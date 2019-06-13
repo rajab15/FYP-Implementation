@@ -14,7 +14,9 @@
 	<!-- VENDOR CSS -->
 	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+	<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
+	
+	
 
 
 	<!-- MAIN CSS -->
@@ -196,6 +198,14 @@
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
+	<script src="assets/vendor/toastr/toastr.min.js"></script>
+	<script src="assets/scripts/klorofil-common.js"></script>
+	<script src="assets/scripts/alarm.js"></script>
+	<script>
+		ready();
+	</script>
+
+		
 </body>
 
 </html>

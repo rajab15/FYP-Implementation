@@ -2,6 +2,7 @@
  session_start();
  include 'php/details.php';
  include 'php/patient_data.php';
+ include 'php/prescription_data.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -118,7 +119,6 @@
 				<div class="container-fluid">
 					<h3 class="page-title">Patient Registration Form</h3>
 					
-
 					<form action="php/save_patient_info.php" method="POST">
 
 					<div class="row">
@@ -310,8 +310,15 @@
 	<script src="assets/vendor/jquery/jquery.min.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="assets/scripts/klorofil-common.js"></script>
 	<script src="assets/vendor/toastr/toastr.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
+	<script src="assets/scripts/alarm.js"></script>
+	<script>
+		//();
+		var string = "<?php echo $prescription_info; ?>";
+		display(string);
+	</script>
 </body>
 
 </html>
