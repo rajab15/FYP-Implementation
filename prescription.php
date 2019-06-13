@@ -180,7 +180,7 @@
                                                         <!-- <div class="col"></div> -->
                                                         <div class="col">
                                                             <input type="reset" class="btn btn-warning" name="resetprescription" value="Reset">
-                                                            <input type="submit" class="btn btn-primary" name="saveprescription" value="Save">
+                                                            <input type="submit" class="btn btn-primary" name="submit" value="Save">
                                                         </div>
                                                         <div class="col"></div>
                                                         <!-- <div class="col"></div> -->
