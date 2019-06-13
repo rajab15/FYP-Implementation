@@ -18,7 +18,7 @@
 	<link rel="stylesheet" href="assets/vendor/chartist/css/chartist-custom.css">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="assets/css/main.css">
-	<!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
+	
 	<link rel="stylesheet" href="assets/css/demo.css">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
@@ -88,6 +88,7 @@
 			</div>
 		</nav>
 		<!-- END NAVBAR -->
+
 		<!-- LEFT SIDEBAR -->
 		<div id="sidebar-nav" class="sidebar">
 			<div class="sidebar-scroll">
@@ -113,11 +114,13 @@
 			</div>
 		</div>
 		<!-- END LEFT SIDEBAR -->
+
 		<!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
+
 					<!-- OVERVIEW -->
 					<div class="panel panel-headline">
 						<div class="panel-heading">
@@ -185,6 +188,7 @@
 						</div>
 					</div>
 					<!-- END OVERVIEW -->
+
 					<div class="row">
 						<div class="col-md-6">
 							<!-- RECENT PURCHASES -->
@@ -256,8 +260,9 @@
 							<!-- END RECENT PURCHASES -->
 						</div>
 						<div class="col-md-6">
+
 							<!-- MULTI CHARTS -->
-							<div class="panel">
+							<!-- <div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">Projection vs. Realization</h3>
 									<div class="right">
@@ -268,14 +273,16 @@
 								<div class="panel-body">
 									<div id="visits-trends-chart" class="ct-chart"></div>
 								</div>
-							</div>
+							</div> -->
 							<!-- END MULTI CHARTS -->
+
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-7">
+
 							<!-- TODO LIST -->
-							<div class="panel">
+							<!-- <div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">To-Do List</h3>
 									<div class="right">
@@ -326,12 +333,14 @@
 										</li>
 									</ul>
 								</div>
-							</div>
+							</div> -->
 							<!-- END TODO LIST -->
+
 						</div>
 						<div class="col-md-5">
+
 							<!-- TIMELINE -->
-							<div class="panel panel-scrolling">
+							<!-- <div class="panel panel-scrolling">
 								<div class="panel-heading">
 									<h3 class="panel-title">Recent User Activity</h3>
 									<div class="right">
@@ -364,14 +373,16 @@
 									</ul>
 									<button type="button" class="btn btn-primary btn-bottom center-block">Load More</button>
 								</div>
-							</div>
+							</div> -->
 							<!-- END TIMELINE -->
+
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-4">
+
 							<!-- TASKS -->
-							<div class="panel">
+							<!-- <div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">My Tasks</h3>
 									<div class="right">
@@ -423,12 +434,14 @@
 										</li>
 									</ul>
 								</div>
-							</div>
+							</div> -->
 							<!-- END TASKS -->
+
 						</div>
 						<div class="col-md-4">
+
 							<!-- VISIT CHART -->
-							<div class="panel">
+							<!-- <div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">Website Visits</h3>
 									<div class="right">
@@ -439,12 +452,14 @@
 								<div class="panel-body">
 									<div id="visits-chart" class="ct-chart"></div>
 								</div>
-							</div>
+							</div> -->
 							<!-- END VISIT CHART -->
+
 						</div>
 						<div class="col-md-4">
+
 							<!-- REALTIME CHART -->
-							<div class="panel">
+							<!-- <div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">System Load</h3>
 									<div class="right">
@@ -465,8 +480,9 @@
 										<li>Processes: <span>259</span></li>
 									</ul>
 								</div>
-							</div>
+							</div> -->
 							<!-- END REALTIME CHART -->
+
 						</div>
 					</div>
 				</div>
