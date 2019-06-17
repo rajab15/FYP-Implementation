@@ -316,8 +316,16 @@
 	<script src="assets/scripts/alarm.js"></script>
 	<script>
 		//();
-		var string = "<?php echo $prescription_info; ?>";
-		display(string);
+				<?php
+				$js_array = json_encode($alarm_data);
+				echo "var alarm_data = ". $js_array . ";\n";
+				?>
+				
+		//var string = "<?php echo $prescription_info; ?>";
+		for (var i = 0; i < alarm_data.length; i++) { 
+			display(alarm_data[i]);
+		}
+		//display(string);
 	</script>
 </body>
 
