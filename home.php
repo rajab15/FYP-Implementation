@@ -151,12 +151,13 @@
 									<div class="metric">
 										<span class="icon"><i class="fa fa-eye"></i></span>
 										<p>
-											<span class="number">274,678</span>
+											<span class="number">274</span>
 											<span class="title">Visits</span>
 										</p>
 									</div>
 								</div>
-								<div class="col-md-3">
+
+								<!-- <div class="col-md-3">
 									<div class="metric">
 										<span class="icon"><i class="fa fa-bar-chart"></i></span>
 										<p>
@@ -164,13 +165,15 @@
 											<span class="title">Conversions</span>
 										</p>
 									</div>
-								</div>
+								</div> -->
+
 							</div>
 							<div class="row">
 								<div class="col-md-9">
 									<div id="headline-chart" class="ct-chart"></div>
 								</div>
-								<div class="col-md-3">
+
+								<!-- <div class="col-md-3">
 									<div class="weekly-summary text-right">
 										<span class="number">2,315</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 12%</span>
 										<span class="info-label">Total Sales</span>
@@ -183,7 +186,8 @@
 										<span class="number">$65,938</span> <span class="percentage"><i class="fa fa-caret-down text-danger"></i> 8%</span>
 										<span class="info-label">Total Income</span>
 									</div>
-								</div>
+								</div> -->
+
 							</div>
 						</div>
 					</div>
@@ -191,7 +195,9 @@
 
 					<div class="row">
 						<div class="col-md-6">
+
 							<!-- RECENT PURCHASES -->
+<!-- 
 							<div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">Recent Purchases</h3>
@@ -256,8 +262,10 @@
 										<div class="col-md-6 text-right"><a href="#" class="btn btn-primary">View All Purchases</a></div>
 									</div>
 								</div>
-							</div>
+							</div> -->
+
 							<!-- END RECENT PURCHASES -->
+
 						</div>
 						<div class="col-md-6">
 
