@@ -177,7 +177,7 @@
 
 							<!-- RIGHT COLUMN -->
 							<div class="profile-right">
-								<h4 class="heading"> <?php echo $_SESSION['nurse_names']; ?>'s Awards</h4>
+								<h4 class="heading"> <?php echo $_SESSION['nurse_names']; ?>'s</h4>
 								<!-- AWARDS -->
 								<div class="awards">
 									<div class="row">
