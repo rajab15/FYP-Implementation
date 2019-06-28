@@ -63,8 +63,10 @@ echo date_format($date,"H:i:s");
 echo "\n\n\n";
 echo date_format($date2,"H:i:s");
 */
+$time1 = date_format($date,"H:i:s");
+$time2 = date_format($date2,"H:i:s");
 
-$range = ['07:00:00','14:00:00'];
+$range = [$time1, $time2];
 //$range = [$date, $date2];
 
 function isInRange($value, $range) {
@@ -80,12 +82,13 @@ $result = mysqli_query($conn, $sql);
 if ($result-> num_rows > 0) {
     while ($row = $result-> fetch_assoc()) {
         if(isInRange($row['time1'], $range) || isInRange($row['time2'], $range) || isInRange($row['time3'], $range) || isInRange($row['time4'], $range) || isInRange($row['time5'], $range)){
-            $patients[] = $row['patient_id'];
+           // $patients[] = $row['patient_id'];
+            $patient[] = $row['patient_id'];
         }
     }
 }
 
-foreach($patients as $item){
+foreach($patient as $item){
     $sql2 = "SELECT * FROM prescription WHERE patient_id = '$item'";
     $result2 = mysqli_query($conn, $sql2);
 

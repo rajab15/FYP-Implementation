@@ -2,6 +2,7 @@
  session_start();
  include 'php/details.php';
  include 'php/patient_data.php';
+ 
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,6 +17,7 @@
 	<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
 	<link rel="stylesheet" href="assets/vendor/chartist/css/chartist-custom.css">
+	<link rel="stylesheet" href="assets/vendor/toastr/toastr.min.css">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="assets/css/main.css">
 	
@@ -504,7 +506,13 @@
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>
 	<script src="assets/vendor/chartist/js/chartist.min.js"></script>
+	<script src="assets/vendor/toastr/toastr.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
+	<script src="assets/scripts/alarm.js"></script>
+	<script src="assets/scripts/klorofil-common.js"></script>
+	<script>
+		
+	</script>
 	<script>
 	$(function() {
 		var data, options;

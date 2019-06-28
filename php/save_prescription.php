@@ -31,13 +31,13 @@ if (isset($_POST["time2"]) && !empty($_POST["time2"])) {
     $time2 = $_POST["time2"];    
 }
 if (isset($_POST["time3"]) && !empty($_POST["time3"])) {
-    $time2 = $_POST["time3"];    
+    $time3 = $_POST["time3"];    
 }
 if (isset($_POST["time4"]) && !empty($_POST["time4"])) {
-    $time2 = $_POST["time4"];    
+    $time4 = $_POST["time4"];    
 }
 if (isset($_POST["time5"]) && !empty($_POST["time5"])) {
-    $time2 = $_POST["time5"];    
+    $time5 = $_POST["time5"];    
 }
 
 

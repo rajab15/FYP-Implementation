@@ -1,6 +1,6 @@
 <?php
-while(true) {
-    sleep(60);
+//while(true) {
+    //sleep(60);
     //script here
     $conn = OpenCon();
 
@@ -16,7 +16,7 @@ while(true) {
                 $dose = $row['dose'];
                 $time1 = $row['time1'];
 
-                $sql2 = "SELECT first_name,last_name FROM patient WHERE patient_id = $patient_id";
+                $sql2 = "SELECT first_name,last_name FROM patient WHERE patient_id = '$patient_id'";
                 $result2 = mysqli_query($conn, $sql2);
                 if ($result2-> num_rows > 0) {
                     while ($row2 = $result2-> fetch_assoc()) {
@@ -45,5 +45,5 @@ while(true) {
 
 
     //end your script
-}
+//}
 ?>

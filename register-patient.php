@@ -2,6 +2,7 @@
  session_start();
  include 'php/details.php';
  include 'php/patient_data.php';
+ include 'php/alarm_data.php';
  include 'php/prescription_data.php';
 ?>
 <!doctype html>
@@ -312,20 +313,18 @@
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
 	<script src="assets/vendor/toastr/toastr.min.js"></script>
-	<script src="assets/scripts/klorofil-common.js"></script>
 	<script src="assets/scripts/alarm.js"></script>
 	<script>
-		//();
-				<?php
-				$js_array = json_encode($alarm_data);
-				echo "var alarm_data = ". $js_array . ";\n";
-				?>
-				
-		//var string = "<?php echo $prescription_info; ?>";
+		//var string = "Hussein Msisiri";
+		//var string = "<?php echo $prescription_info; ?>";		
+		//display(string);
+
+
+		var alarm_data = <?php echo json_encode($alarm_data); ?>
+
 		for (var i = 0; i < alarm_data.length; i++) { 
 			display(alarm_data[i]);
-		}
-		//display(string);
+		} 
 	</script>
 </body>
 
