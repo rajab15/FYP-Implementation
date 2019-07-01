@@ -145,14 +145,16 @@
                         <tr>
                             <td scope="col">
                                 <!--<form  action="php/assign_bed.php" method="POST"> -->
-                                Patient ID: <br>
-                                <input type="number" class="form-control" placeholder="Enter Patient ID" name="patient_id" required>
+								Patient ID: <br>
+								<span id="IDHint"></span>
+								<input type="number" class="form-control" placeholder="Enter Patient ID" name="patient_id" onkeyup="showIDHint(this.value)" required>
                                 <br>
-                                Ward Number: <br>
-                                <input type="number" class="form-control" placeholder="Enter Ward Number" name="ward_no" required>
+								Ward Number: <br>
+								<?php include 'php/get_wards.php' ?>
                                 <br>
-                                Bed Number : <br>
-                                <input type="number" class="form-control" placeholder="Enter Bed Number" name="bed_no" required>
+								Bed Number : <br>
+								
+                                <input class="form-control" name="bed_no" id="bed_no" required>
                                 <br>
                                 Admission Date: <br>
                                 <input type="date" class="form-control" placeholder="Enter PAdmission Date" name="admission_date" required>
@@ -194,7 +196,7 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/vendor/jquery/jquery.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
@@ -202,7 +204,38 @@
 	<script src="assets/scripts/klorofil-common.js"></script>
 	<script src="assets/scripts/alarm.js"></script>
 	<script>
-		ready();
+		function showIDHint(str) {
+			if (str.length == 0) { 
+				document.getElementById("IDHint").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("IDHint").innerHTML = this.responseText;
+					}
+				};
+				xmlhttp.open("GET", "php/get_id_hint.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
+
+		function showBed(str) {
+			if (str.length == 0) { 
+				document.getElementById("bed_no").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						//document.getElementById("bed_no").innerHTML = this.responseText;
+						$('#bed_no').val(this.responseText);
+					}
+				};
+				xmlhttp.open("GET", "php/get_ward_bed.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
 	</script>
 
 		
