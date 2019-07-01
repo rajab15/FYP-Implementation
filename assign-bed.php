@@ -132,7 +132,7 @@
 									<p class="panel-subtitle">Please select bed and ward to assign</p>
 								</div>
 								<div class="panel-body">
-								<form action="php/assign_bed.php" method="POST">
+								<form method="POST">
                 <table class="table table-striped table-bordered" width=60%>
                     <thead class="thead-dark">
                         <tr>
@@ -236,6 +236,26 @@
 				xmlhttp.send();
 			}
 		}
+
+		$(function () {
+
+		$('form').on('submit', function (e) {
+
+		e.preventDefault();
+
+		$.ajax({
+			type: 'post',
+			url: 'php/assign_bed.php',
+			data: $('form').serialize(),
+			success: function () {
+			alert('form was submitted');
+			location.reload(true);
+			}
+		});
+
+		});
+
+		});
 	</script>
 
 		

@@ -20,7 +20,12 @@ VALUES ('$patient_id', '$ward_no', '$bed_no',  '$admission_date', '$release_date
 if (!mysqli_query($conn,$sql)) {
     die('Error: ' . mysqli_error($conn));
   }
-  echo "Admission Record added";
+  header("Refresh:0; url=../assign-bed.php");
+
+  echo '<script>';
+  echo  'alert("Admission Record added");';
+  echo '</script>';
+ // echo "Admission Record added";
   
   CloseCon($conn);
 
