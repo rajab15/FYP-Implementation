@@ -84,10 +84,13 @@ if ($result-> num_rows > 0) {
         if(isInRange($row['time1'], $range) || isInRange($row['time2'], $range) || isInRange($row['time3'], $range) || isInRange($row['time4'], $range) || isInRange($row['time5'], $range)){
            // $patients[] = $row['patient_id'];
             $patient[] = $row['patient_id'];
+        } else {
+            $patient[] = NULL;
         }
     }
 }
 
+if($patient != NULL){
 foreach($patient as $item){
     $sql2 = "SELECT * FROM prescription WHERE patient_id = '$item'";
     $result2 = mysqli_query($conn, $sql2);
@@ -134,6 +137,7 @@ foreach($patient as $item){
     }
 
     
+}
 }
 
 /*

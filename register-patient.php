@@ -25,6 +25,7 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+	<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 </head>
 
 <body>
@@ -281,7 +282,7 @@
 									<div class="right">
 									<input type="reset" class="btn btn-warning" name="reset" value="Reset">
             
-            						<input type="submit" class="btn btn-primary" name="submit" value="Submit" onclick="">
+            						<input type="submit" class="btn btn-primary" name="submit" id="submit" value="Submit">
 										
 										
 									</div>
@@ -308,7 +309,7 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/vendor/jquery/jquery.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
@@ -326,6 +327,7 @@
 			display(alarm_data[i]);
 		} 
 	</script>
+
 </body>
 
 </html>
