@@ -518,6 +518,7 @@
 	<script src="assets/scripts/klorofil-common.js"></script>
 	<script src="assets/scripts/alarm.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
+	<script src="assets/scripts/prescription_patients.js"></script>
 	<script>
 		
 	</script>
