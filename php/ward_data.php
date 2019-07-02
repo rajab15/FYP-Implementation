@@ -64,7 +64,7 @@ for($j = 1; $j <= $number_of_wards; $j++){
     //echo $ward_capacity;
     echo "\n"; echo "<br>";
 
-    $sql3 = "SELECT DISTINCT bed_no FROM accommodation WHERE ward_no = $j";
+    $sql3 = "SELECT DISTINCT bed_no FROM accommodation WHERE ward_no = $j AND state = 'not released'";
     $result3 = mysqli_query($conn, $sql3);
     while($row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC)){
     foreach ($row3 as $item){

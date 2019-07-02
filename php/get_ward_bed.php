@@ -18,7 +18,7 @@ if ($q !== "") {
     $row2 = mysqli_fetch_array($result2, MYSQLI_ASSOC);
     $ward_capacity = $row2['ward_no'];
 
-    $sql3 = "SELECT DISTINCT bed_no FROM accommodation WHERE ward_no = $q";
+    $sql3 = "SELECT DISTINCT bed_no FROM accommodation WHERE ward_no = $q AND state = 'not released'";
     $result3 = mysqli_query($conn, $sql3);
     while($row3 = mysqli_fetch_array($result3, MYSQLI_ASSOC)){
     foreach ($row3 as $item){

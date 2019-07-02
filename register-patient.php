@@ -123,7 +123,7 @@
 				<div class="container-fluid">
 					<h3 class="page-title">Patient Registration Form</h3>
 					
-					<form action="php/save_patient_info.php" method="POST">
+					<form action="php/save_patient_info.php" method="POST"> 
 
 					<div class="row">
 						<div class="col-md-6">

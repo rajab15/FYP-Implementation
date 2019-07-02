@@ -47,10 +47,12 @@ VALUES ('$patient_id', '$medicine', '$start_date', '$dose', '$time1', '$time2', 
 if (!mysqli_query($conn,$sql)) {
   die('Error: ' . mysqli_error($conn));
 }
-echo "Prescription added";
+//echo "Prescription added";
+
 echo '<script>';
 echo  'alert("Prescription added");';
-echo '</script>';
+echo '</script>'; 
+header("Refresh:0; url=../prescription.php");
 
 CloseCon($conn);
 //mysqli_close($conn);

@@ -75,7 +75,7 @@ foreach ($wards as $item){
         if ($result6-> num_rows > 0) {
         while ($row5 = $result6-> fetch_assoc()) {
             $full_name = $row5['first_name']." ".$row5['last_name'];
-            $nurses[] = $full_name;
+            $nurse[] = $full_name;
          }
      }
      
@@ -102,7 +102,7 @@ foreach ($wards as $item){
     echo "<tr><td>Current admitted patients</td><td>$current_admitted</td></tr>";
     echo "<tr><td>Total admitted patients</td><td>$total_admitted</td></tr>";
     echo "<tr><td width='65%'>Nurses on duty</td><td>";
-    foreach ($nurses as $item2){
+    foreach ($nurse as $item2){
         echo "$item2, \t";
     }
     "</td></tr>";
@@ -114,6 +114,6 @@ foreach ($wards as $item){
     echo "</div>";
     echo "</div>";        
 
-    $nurses = array();
+    $nurse = array();
     }     
 ?>    

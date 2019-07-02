@@ -50,7 +50,10 @@ VALUES ('$fname', '$mname', '$lname',  '$phone_no', '$work_no', '$city', '$state
 if (!mysqli_query($conn,$sql)) {
   die('Error: ' . mysqli_error($conn));
 }
-echo "Record added";
+echo '<script>';
+echo  'alert("Patient registered");';
+echo '</script>'; 
+header("Refresh:0; url=../register-patient.php");
 
 CloseCon($conn);
 //mysqli_close($conn);

@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-	<title>Admitted Patients | MRS - Medicine Reminding System</title>
+	<title>Discharge Patient | MRS - Medicine Reminding System</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -15,21 +15,13 @@
 	<link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/vendor/linearicons/style.css">
-	<link rel="stylesheet" href="assets/vendor/chartist/css/chartist-custom.css">
 	<!-- MAIN CSS -->
 	<link rel="stylesheet" href="assets/css/main.css">
-	
-	<link rel="stylesheet" href="assets/css/demo.css">
 	<!-- GOOGLE FONTS -->
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
-
-    <link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
-
-	
-
 </head>
 
 <body>
@@ -38,7 +30,7 @@
 		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
-				<a href="index.html"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+				<a href="home.php"><img src="assets/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
 			</div>
 			<div class="container-fluid">
 				<div class="navbar-btn">
@@ -77,7 +69,7 @@
 							</ul>
 						</li>
 						<li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span><?php echo $_SESSION['nurse_names']; ?></span> </span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span><?php echo $_SESSION['nurse_names']; ?></span> </span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
                             <li><a href="page-profile.php"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
 								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
@@ -97,18 +89,18 @@
 		<div id="sidebar-nav" class="sidebar">
 			<div class="sidebar-scroll">
 				<nav>
-                <ul class="nav">
+					<ul class="nav">
 						<li><a href="home.php" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="register-patient.php" class=""><i class="lnr lnr-file-add"></i> <span>Register Patient</span></a></li>
 						<li><a href="admitted-patients.php" class="active"><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
-						<li><a href="assign-bed.php" class=""><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
+						<li><a href="assign-bed.php"><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
 						<li><a href="prescription.php" class=""><i class="lnr lnr-file-empty"></i> <span>Prescriptions</span></a></li>
 						<li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Nurse</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.php" class="">Profile</a></li>
-									<li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
+									<li><a href="page-lockscreen.php" class="">Lockscreen</a></li>
 								</ul>
 							</div>
 						</li>
@@ -123,34 +115,39 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Admitted Patients</h3>
-					
-					<?php include 'php/ward_admissions.php';?>
-				<div class="row">
-					<div class="col-md-12">
+                    <h3 class="page-title">Discharge patient</h3>
+                    <form action="php/discharge_patient.php" method="POST">
+					<div class="row">
+						<div class="col-md-12">
+							<!-- PANEL DEFAULT -->
 							<div class="panel">
 								<div class="panel-heading">
-									<h3 class="panel-title">Discharge patient</h3>
-									
+									<h3 class="panel-title">Select patient to dischrge</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
 								</div>
 								<div class="panel-body">
-								<a href="discharge-patient.php">	
-								<button type="button" class="btn btn-danger"><i class="fa fa-warning"></i> Discharge</button>
-								</a>
+                                    <span id="IDHint"></span>
+                                    <input type="number" class="form-control" placeholder="Enter Patient Number" name="patient_id" onkeyup="showIDHint(this.value)" required>
+                                    <br>
+                                    <input type="submit" name="submit" class="btn btn-danger" value="Discharge">
 								</div>
 							</div>
-					</div>
-				</div>
+							<!-- END PANEL DEFAULT -->
+						</div>
+                    </div>
+                    </form>
 				</div>
 			</div>
-
 			<!-- END MAIN CONTENT -->
 		</div>
 		<!-- END MAIN -->
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">&copy; 2019 MRS - Medicine Reminding System</p>
+				<p class="copyright">&copy; <?php echo date("Y"); ?> MRS - Medicine Reminding System</p>
 			</div>
 		</footer>
 	</div>
@@ -159,28 +156,24 @@
 	<script src="assets/vendor/jquery/jquery.min.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="assets/vendor/chartist/js/chartist.min.js"></script>
-	<script src="assets/scripts/klorofil-common.js"></script>
-
-	 <!-- this page js -->
-	 <script src="assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
-    <script src="assets/extra-libs/multicheck/jquery.multicheck.js"></script>
-    <script src="assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script src="assets/scripts/klorofil-common.js"></script>
     <script>
-        /****************************************
-         *       Basic Table                   *
-         ****************************************/
-        $('.zero_config').DataTable();
-	</script>
-	
-	<!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
-	<script src="assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-
-	
+		function showIDHint(str) {
+			if (str.length == 0) { 
+				document.getElementById("IDHint").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("IDHint").innerHTML = this.responseText;
+					}
+				};
+				xmlhttp.open("GET", "php/get_id_hint.php?q=" + str, true);
+				xmlhttp.send();
+			}
+        }
+    </script>
 </body>
 
 </html>

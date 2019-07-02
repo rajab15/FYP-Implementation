@@ -125,7 +125,7 @@
 									<p class="panel-subtitle">Enter patient prescriptions</p>
 								</div>
 								<div class="panel-body">
-                                    <form action="php/save_prescription.php" method="POST">
+                                    <form id="mainForm" action="php/save_prescription.php" method="POST">
 
                                         <!-- Table for entering Prescriptions -->
                                         <table class="table table-bordered">
@@ -223,7 +223,7 @@
 	<script src="assets/vendor/toastr/toastr.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
 	<script src="assets/scripts/alarm.js"></script>
-	<script>
+	<script defer>
 		function showIDHint(str) {
 			if (str.length == 0) { 
 				document.getElementById("IDHint").innerHTML = "";
@@ -255,26 +255,26 @@
 				xmlhttp.send();
 			}
 		}
-
+/*
 		$(function () {
 
-		$('form').submit(function (e) {
+		$('#mainForm').submit(function (e) {
 
 		e.preventDefault();
 
 		$.ajax({
 			type: 'post',
 			url: 'php/save_prescription.php',
-			data: $('form').serialize(),
+			data: $('#mainForm').serialize(),
 			success: function () {
 			alert('Prescription saved successfully');
-			location.reload(true);
+			//location.reload(true);
 			}
 		});
 
 		});
 
-		});
+		}); */
 	</script>
 </body>
 

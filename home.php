@@ -41,50 +41,18 @@
 				<div class="navbar-btn">
 					<button type="button" class="btn-toggle-fullwidth"><i class="lnr lnr-arrow-left-circle"></i></button>
 				</div>
-				<form class="navbar-form navbar-left">
-					<div class="input-group">
-						<input type="text" value="" class="form-control" placeholder="Search dashboard...">
-						<span class="input-group-btn"><button type="button" class="btn btn-primary">Go</button></span>
-					</div>
-				</form>
-
+				<div class="navbar-btn">
+				<h6 class="text-center">MRS - Medicine Reminding System</h6>
+				</div>
 				<div id="navbar-menu">
 					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
-								<i class="lnr lnr-alarm"></i>
-								<span class="badge bg-danger">5</span>
-							</a>
-							<ul class="dropdown-menu notifications">
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>System space is almost full</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-danger"></span>You have 9 unfinished tasks</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Monthly report is available</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Weekly meeting in 1 hour</a></li>
-								<li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
-								<li><a href="#" class="more">See all notifications</a></li>
-							</ul>
-						</li>
-						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Help</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
-							<ul class="dropdown-menu">
-								<li><a href="#">Basic Use</a></li>
-								<li><a href="#">Working With Data</a></li>
-								<li><a href="#">Security</a></li>
-								<li><a href="#">Troubleshooting</a></li>
-							</ul>
-						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="assets/img/user.png" class="img-circle" alt="Avatar"> <span><?php echo $_SESSION['nurse_names']; ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="page-profile.php"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
 								<li><a href="php/logout.php"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
 							</ul>
 						</li>
-						<!-- <li>
-							<a class="update-pro" href="https://www.themeineed.com/downloads/klorofil-pro-bootstrap-admin-dashboard-template/?utm_source=klorofil&utm_medium=template&utm_campaign=KlorofilPro" title="Upgrade to Pro" target="_blank"><i class="fa fa-rocket"></i> <span>UPGRADE TO PRO</span></a>
-						</li> -->
 					</ul>
 				</div>
 			</div>
@@ -136,7 +104,7 @@
 										<span class="icon"><i class="fa fa-download"></i></span>
 										<p>
 											<span class="number"><?php echo $patients; ?></span>
-											<span class="title">Total Patients</span>
+											<span class="title">Total registered patients</span>
 										</p>
 									</div>
 								</div>
@@ -145,7 +113,7 @@
 										<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 										<p>
 											<span class="number"><?php echo $admitted_patients; ?></span>
-											<span class="title"> Admitted Patients</span>
+											<span class="title">Total Admitted Patients</span>
 										</p>
 									</div>
 								</div>
@@ -153,51 +121,24 @@
 									<div class="metric">
 										<span class="icon"><i class="fa fa-eye"></i></span>
 										<p>
-											<span class="number">274</span>
-											<span class="title">Visits</span>
+											<span class="number"><?php echo $current_admitted_patients; ?></span>
+											<span class="title">Current admitted patients</span>
 										</p>
 									</div>
 								</div>
-
-								<!-- <div class="col-md-3">
+								<div class="col-md-3">
 									<div class="metric">
-										<span class="icon"><i class="fa fa-bar-chart"></i></span>
+										<span class="icon"><i class="fa fa-eye"></i></span>
 										<p>
-											<span class="number">35%</span>
-											<span class="title">Conversions</span>
+											<span class="number"><?php echo $nurses; ?></span>
+											<span class="title">Number of registered nurses</span>
 										</p>
 									</div>
-								</div> -->
-
-							</div>
-							
-							<div class="row">
-								<div class="col-md-9">
-									<div id="headline-chart" class="ct-chart"></div>
 								</div>
-
-								<!-- <div class="col-md-3">
-									<div class="weekly-summary text-right">
-										<span class="number">2,315</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 12%</span>
-										<span class="info-label">Total Sales</span>
-									</div>
-									<div class="weekly-summary text-right">
-										<span class="number">$5,758</span> <span class="percentage"><i class="fa fa-caret-up text-success"></i> 23%</span>
-										<span class="info-label">Monthly Income</span>
-									</div>
-									<div class="weekly-summary text-right">
-										<span class="number">$65,938</span> <span class="percentage"><i class="fa fa-caret-down text-danger"></i> 8%</span>
-										<span class="info-label">Total Income</span>
-									</div>
-								</div> -->
-
 							</div>
 						</div>
 					</div>
 					<!-- END OVERVIEW -->
-
-					
-
 					<div class="row">
 						<div class="col-md-6">
 							<!-- PROGRESS BARS -->
@@ -215,6 +156,10 @@
 							<div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">Monthly Admissions</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
 								</div>
 								<div class="panel-body">
 									<div id="patients-per-month-bar-chart" class="ct-chart"></div>
@@ -223,7 +168,20 @@
 						</div>
 					</div>
 					<div class="row">
-					
+						<div class="col-md-6">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Monthly Discharges</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+									</div>
+								</div>
+								<div class="panel-body">
+									<div id="discharges-per-month-bar-chart" class="ct-chart"></div>
+								</div>
+							</div>
+						</div>
 					</div>
 			</div>
 			<!-- END MAIN CONTENT -->
@@ -252,124 +210,6 @@
 		
 	</script>
 	<script>
-	$(function() {
-		var data, options;
-
-		// headline charts
-		data = {
-			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-			series: [
-				[23, 29, 24, 40, 25, 44, 35],
-				[14, 25, 18, 34, 29, 38, 44],
-			]
-		};
-
-		options = {
-			height: 300,
-			showArea: true,
-			showLine: false,
-			showPoint: false,
-			fullWidth: true,
-			axisX: {
-				showGrid: false
-			},
-			lineSmooth: false,
-		};
-
-		new Chartist.Line('#headline-chart', data, options);
-
-
-		// visits trend charts
-		data = {
-			labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-			series: [{
-				name: 'series-real',
-				data: [200, 380, 350, 320, 410, 450, 570, 400, 555, 620, 750, 900],
-			}, {
-				name: 'series-projection',
-				data: [240, 350, 360, 380, 400, 450, 480, 523, 555, 600, 700, 800],
-			}]
-		};
-
-		options = {
-			fullWidth: true,
-			lineSmooth: false,
-			height: "270px",
-			low: 0,
-			high: 'auto',
-			series: {
-				'series-projection': {
-					showArea: true,
-					showPoint: false,
-					showLine: false
-				},
-			},
-			axisX: {
-				showGrid: false,
-
-			},
-			axisY: {
-				showGrid: false,
-				onlyInteger: true,
-				offset: 0,
-			},
-			chartPadding: {
-				left: 20,
-				right: 20
-			}
-		};
-
-		new Chartist.Line('#visits-trends-chart', data, options);
-
-
-		// visits chart
-		data = {
-			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-			series: [
-				[6384, 6342, 5437, 2764, 3958, 5068, 7654]
-			]
-		};
-
-		options = {
-			height: 300,
-			axisX: {
-				showGrid: false
-			},
-		};
-
-		new Chartist.Bar('#visits-chart', data, options);
-
-
-		// real-time pie chart
-		var sysLoad = $('#system-load').easyPieChart({
-			size: 130,
-			barColor: function(percent) {
-				return "rgb(" + Math.round(200 * percent / 100) + ", " + Math.round(200 * (1.1 - percent / 100)) + ", 0)";
-			},
-			trackColor: 'rgba(245, 245, 245, 0.8)',
-			scaleColor: false,
-			lineWidth: 5,
-			lineCap: "square",
-			animate: 800
-		});
-
-		var updateInterval = 3000; // in milliseconds
-
-		setInterval(function() {
-			var randomVal;
-			randomVal = getRandomInt(0, 100);
-
-			sysLoad.data('easyPieChart').update(randomVal);
-			sysLoad.find('.percent').text(randomVal);
-		}, updateInterval);
-
-		function getRandomInt(min, max) {
-			return Math.floor(Math.random() * (max - min + 1)) + min;
-		}
-
-	});
-	</script>
-	<script>
 		var jan_counter = <?php echo $jan_counter ?>;
 		var feb_counter = <?php echo $feb_counter ?>; 
 		var mar_counter = <?php echo $mar_counter ?>;
@@ -382,6 +222,19 @@
 		var oct_counter = <?php echo $oct_counter ?>;
 		var nov_counter = <?php echo $nov_counter ?>;
 		var dec_counter = <?php echo $dec_counter ?>;
+
+		var jan_dis = <?php echo $jan_dis ?>;
+		var feb_dis = <?php echo $feb_dis ?>; 
+		var mar_dis = <?php echo $mar_dis ?>;
+		var apr_dis = <?php echo $apr_dis ?>;
+		var may_dis = <?php echo $may_dis ?>;
+		var jun_dis = <?php echo $jun_dis ?>;
+		var jul_dis = <?php echo $jul_dis ?>;
+		var aug_dis = <?php echo $aug_dis ?>;
+		var sep_dis = <?php echo $sep_dis ?>;
+		var oct_dis = <?php echo $oct_dis ?>;
+		var nov_dis = <?php echo $nov_dis ?>;
+		var dec_dis = <?php echo $dec_dis ?>;
 		$(function() {
 		var options;
 		
@@ -403,24 +256,24 @@
 
 		new Chartist.Bar('#patients-per-month-bar-chart', ppm_data, options);
 
+		var dpm_data = {
+			labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+			series: [
+				[jan_dis, feb_dis, mar_dis, apr_dis, may_dis, jun_dis, jul_dis, aug_dis, sep_dis, oct_dis, nov_dis, dec_dis],
+			]
+		};
 
-		// area chart
+		// bar chart
 		options = {
-			height: "270px",
-			showArea: true,
-			showLine: false,
-			showPoint: false,
+			barColor: "rgb('255', '0', '0')",
+			
+			height: "400px",
 			axisX: {
 				showGrid: false
 			},
-			lineSmooth: false,
 		};
 
-		new Chartist.Line('#demo-area-chart', data, options);
-
-
-		
-
+		new Chartist.Bar('#discharges-per-month-bar-chart', dpm_data, options);
 	});
 	</script>
 </body>

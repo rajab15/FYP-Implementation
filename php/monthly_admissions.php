@@ -27,6 +27,19 @@ $sep_counter = 0;
 $oct_counter = 0;
 $nov_counter = 0;
 $dec_counter = 0;
+
+$jan_dis = 0;
+$feb_dis = 0;
+$mar_dis = 0;
+$apr_dis = 0;
+$may_dis = 0;
+$jun_dis = 0;
+$jul_dis = 0;
+$aug_dis = 0;
+$sep_dis = 0;
+$oct_dis = 0;
+$nov_dis = 0;
+$dec_dis = 0;
 //$range = [$date, $date2];
 
 function isInRange($value, $range) {
@@ -70,6 +83,41 @@ if ($result-> num_rows > 0) {
     }
 }
 
+$sql2 = "SELECT * FROM accommodation WHERE state = 'released'";
+$result2 = mysqli_query($conn, $sql2);
+
+if ($result2-> num_rows > 0) {
+    
+    while ($row2 = $result2-> fetch_assoc()) { 
+        if(isInRange($row2['admission_date'], $jan_range)){
+            $jan_dis ++;
+         
+        } else if(isInRange($row2['admission_date'], $feb_range)){
+            $feb_dis ++;
+        } else if(isInRange($row2['admission_date'], $mar_range)){
+            $mar_dis ++;
+        } else if(isInRange($row2['admission_date'], $apr_range)){
+            $apr_dis ++;
+        } else if(isInRange($row2['admission_date'], $may_range)){
+            $may_dis ++;
+        } else if(isInRange($row2['admission_date'], $jun_range)){
+            $jun_dis ++;
+        } else if(isInRange($row2['admission_date'], $jul_range)){
+            $jul_dis ++;
+        } else if(isInRange($row2['admission_date'], $aug_range)){
+            $aug_dis ++;
+        } else if(isInRange($row2['admission_date'], $sep_range)){
+            $sep_dis ++;
+        } else if(isInRange($row2['admission_date'], $oct_range)){
+            $oct_dis ++;
+        } else if(isInRange($row2['admission_date'], $nov_range)){
+            $nov_dis ++;
+        } else if(isInRange($row2['admission_date'], $dec_range)){
+            $dec_dis ++;
+        }
+    }
+}
+/*
 echo $jan_counter;
 echo $feb_counter;
 echo $mar_counter;
@@ -81,5 +129,5 @@ echo $aug_counter;
 echo $sep_counter;
 echo $oct_counter;
 echo $nov_counter;
-echo $dec_counter;
+echo $dec_counter;*/
 ?>
