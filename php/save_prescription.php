@@ -6,7 +6,7 @@ if(count($_POST)>0)
 {
  //Including db connection file.
 include 'db_connection.php';
-OpenCon();
+
 $conn = OpenCon();
 
 $patient_id = $_POST["patient_id"];
@@ -37,7 +37,7 @@ if (isset($_POST["time4"]) && !empty($_POST["time4"])) {
     $time4 = $_POST["time4"];    
 }
 if (isset($_POST["time5"]) && !empty($_POST["time5"])) {
-    $time5 = $_POST["time5"];    
+    $time5 = $_POST["time5"];     
 }
 
 
@@ -48,6 +48,9 @@ if (!mysqli_query($conn,$sql)) {
   die('Error: ' . mysqli_error($conn));
 }
 echo "Prescription added";
+echo '<script>';
+echo  'alert("Prescription added");';
+echo '</script>';
 
 CloseCon($conn);
 //mysqli_close($conn);

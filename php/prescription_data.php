@@ -68,8 +68,9 @@ $time2 = date_format($date2,"H:i:s");
 $time3 = NULL;
 //$time[] = array();
  $alarm_data[] = array();
+ $patient[] = array();
 
-$range = ['15:00:00', "18:00:00"];
+$range = [$time1, $time2];
 //$range = [$date, $date2];
 
 function isInRange($value, $range) {

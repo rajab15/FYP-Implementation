@@ -125,10 +125,10 @@
 									<p class="panel-subtitle">Enter patient prescriptions</p>
 								</div>
 								<div class="panel-body">
-                                    <form action="php/save_prescription.php" method="POST"
+                                    <form method="POST">
 
                                         <!-- Table for entering Prescriptions -->
-                                        <table border="0" class="table table-bordered">
+                                        <table class="table table-bordered">
                                             <tr>
                                                 <th colspan="6">
                                                     Patient prescriptions administration:
@@ -136,11 +136,14 @@
                                             </tr>
                                             <tr>
                                                 <th width="30%">Product *</th>
-                                                <td colspan="5"> <input type="text" class="form-control" name="medicine_name" placeholder="Medicine Name" required> </td>
+												<td colspan="5"><input type="text" class="form-control" name="medicineName" placeholder="Medicine Name" onkeyup="showMedicineHint(this.value)" required>
+												<span id="medicineHint"></span>
+												</td>
                                             </tr>
                                             <tr>
                                                 <th width="30%">Patient ID *</th>
-                                                <td colspan="5"> <input type="text" class="form-control" name="patient_id" placeholder="Patient ID" required> </td>
+												<td colspan="5"> <span id="IDHint"></span>
+												<input type="text" class="form-control" name="patient_id" placeholder="Patient ID" onkeyup="showIDHint(this.value)" required> </td>
                                             </tr>
                                             <tr>
                                                 <th> Dose *</th>
@@ -161,17 +164,17 @@
                                             
                                             <tr>
                                                 <th>Times *</th>
-                                                <td align="center"><input type="time" class="form-control" name="time1" id="med_time" style="width:100px" required></td> 
-                                                <td align="center"><input type="time" class="form-control" name="time2" id="med_time" style="width:100px" ></td>
-                                                <td align="center"><input type="time" class="form-control" name="time3" id="med_time" style="width:100px" ></td>
-                                                <td align="center"><input type="time" class="form-control" name="time4" id="med_time" style="width:100px" ></td>
-                                                <td align="center"><input type="time" class="form-control" name="time5" id="med_time" style="width:100px" ></td>
+                                                <td ><input type="time" class="form-control" name="time1" id="med_time" style="width:100px" required></td> 
+                                                <td ><input type="time" class="form-control" name="time2" id="med_time" style="width:100px" ></td>
+                                                <td ><input type="time" class="form-control" name="time3" id="med_time" style="width:100px" ></td>
+                                                <td ><input type="time" class="form-control" name="time4" id="med_time" style="width:100px" ></td>
+                                                <td ><input type="time" class="form-control" name="time5" id="med_time" style="width:100px" ></td>
                                                 
                                             </td>
                                             </tr>
                                         </table> <br>
 
-                                        <table border="0" width=70%>
+                                        <table width=70%>
                                             <tr>
                                                 <td>
                                                     <div class="row">
@@ -217,6 +220,59 @@
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
+	<script>
+		function showIDHint(str) {
+			if (str.length == 0) { 
+				document.getElementById("IDHint").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("IDHint").innerHTML = this.responseText;
+					}
+				};
+				xmlhttp.open("GET", "php/get_id_hint.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
+
+		function showMedicineHint(str) {
+			if (str.length == 0) { 
+				document.getElementById("medicineHint").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("medicineHint").innerHTML = this.responseText;
+					}
+				};
+				xmlhttp.open("GET", "php/get_medicine_hint.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
+
+		$(function () {
+
+		$('form').on('submit', function (e) {
+
+		e.preventDefault();
+
+		$.ajax({
+			type: 'post',
+			url: 'php/save_prescription.php',
+			data: $('form').serialize(),
+			success: function () {
+			alert('Prescription saved successfully');
+			location.reload(true);
+			}
+		});
+
+		});
+
+		});
+	</script>
 </body>
 
 </html>

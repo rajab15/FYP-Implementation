@@ -248,7 +248,7 @@
 			url: 'php/assign_bed.php',
 			data: $('form').serialize(),
 			success: function () {
-			alert('form was submitted');
+			alert('Bed assigned successfully');
 			location.reload(true);
 			}
 		});

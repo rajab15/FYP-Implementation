@@ -27,6 +27,6 @@ if (!mysqli_query($conn,$sql)) {
   echo '</script>';
  // echo "Admission Record added";
   
-  CloseCon($conn);
+  CloseCon($conn); 
 
 ?>
