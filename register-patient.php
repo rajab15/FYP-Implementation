@@ -3,7 +3,9 @@
  include 'php/details.php';
  include 'php/patient_data.php';
  include 'php/alarm_data.php';
- include 'php/prescription_data.php';
+// include 'php/prescription_data.php';
+
+ //header("Refresh:10");
 ?>
 <!doctype html>
 <html lang="en">
@@ -321,12 +323,24 @@
 		//display(string);
 
 
-		var alarm_data = <?php echo json_encode($alarm_data); ?>
+	//	var alarm_data = <?php echo json_encode($alarm_data); ?>
 
-		for (var i = 0; i < alarm_data.length; i++) { 
-			display(alarm_data[i]);
-		} 
+		
+	 
 	</script>
+	 <script>
+			$(document).ready(function(){
+			setInterval(function(){
+				$.post("php/prescription_data.php",function(postresult){
+					//var alarm_data = new Array();
+					alarm_data = JSON.parse(postresult);
+					for (var i = 0; i < alarm_data.length; i++) { 
+					display(alarm_data[i]);
+				}
+			});
+			}, 2000);
+			});
+</script>
 
 </body>
 
