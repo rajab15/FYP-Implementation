@@ -27,7 +27,7 @@ foreach ($wards as $item){
     echo "<div class='panel-body'>";
     //echo "<div>";
     echo "<table class='table table-bordered table-striped zero_config'>";
-    echo "<thead><tr><th>Patient Number</th><th>Patient Name</th><th>Bed Number</th><th>Expected Release Date</th></tr></thead>";
+    echo "<thead><tr><th>Patient Number</th><th>Patient Name</th><th>Bed Number</th><th>Admission Date</th><th>Expected Release Date</th></tr></thead>";
     echo "<tbody>";
     
 
@@ -44,7 +44,7 @@ foreach ($wards as $item){
                     
                 }
             }
-            echo "<tr><td>". $row['patient_id']."</td><td>$full_name</td><td>". $row['bed_no']."</td><td>". $row['release_date']."</td></tr>";
+            echo "<tr><td>". $row['patient_id']."</td><td>$full_name</td><td>". $row['bed_no']."</td><td>". $row['admission_date']."</td><td>". $row['release_date']."</td></tr>";
             }
             echo "</tbody>";
             }

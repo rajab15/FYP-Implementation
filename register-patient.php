@@ -340,6 +340,26 @@
 			});
 			}, 2000);
 			});
+
+			$(function () {
+
+			$('form').submit(function (e) {
+
+			e.preventDefault();
+
+			$.ajax({
+				type: 'post',
+				url: 'php/save_patient_info.php',
+				data: $('form').serialize(),
+				success: function () {
+				alert('Patient registered successfully');
+				location.reload(true);
+				}
+			});
+
+			});
+
+			});	
 </script>
 
 </body>

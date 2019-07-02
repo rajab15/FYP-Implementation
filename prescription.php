@@ -125,7 +125,7 @@
 									<p class="panel-subtitle">Enter patient prescriptions</p>
 								</div>
 								<div class="panel-body">
-                                    <form method="POST">
+                                    <form action="php/save_prescription.php" method="POST">
 
                                         <!-- Table for entering Prescriptions -->
                                         <table class="table table-bordered">
@@ -216,10 +216,13 @@
 	</div>
 	<!-- END WRAPPER -->
 	<!-- Javascript -->
-	<script src="assets/vendor/jquery/jquery.min.js"></script>
+	<script src="assets/vendor/jquery/jquery.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
 	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
+	<script src="assets/vendor/toastr/toastr.min.js"></script>
+	<script src="assets/scripts/klorofil-common.js"></script>
+	<script src="assets/scripts/alarm.js"></script>
 	<script>
 		function showIDHint(str) {
 			if (str.length == 0) { 
@@ -255,7 +258,7 @@
 
 		$(function () {
 
-		$('form').on('submit', function (e) {
+		$('form').submit(function (e) {
 
 		e.preventDefault();
 

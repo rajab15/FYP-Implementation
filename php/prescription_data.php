@@ -68,7 +68,7 @@ $time2 = date_format($date2,"H:i:s");
 $time3 = NULL;
 //$time[] = array();
  $alarm_data[] = array();
- $patient[] = array();
+// $patient[] = array();
 
 $range = [$time1, $time2];
 //$range = [$date, $date2];
@@ -181,5 +181,5 @@ foreach ($alarm_data as $item){
 }
 */
 
-print json_encode($alarm_data);//($alarm_data);
+echo json_encode($alarm_data);//($alarm_data);
 ?>

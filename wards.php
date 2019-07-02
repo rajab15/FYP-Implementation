@@ -125,11 +125,11 @@
 							<div class="panel panel-headline">
 								<div class="panel-heading">
 									<h3 class="panel-title">Ward Management</h3>
-									<p class="panel-subtitle">Panel to display most important information</p>
+									<p class="panel-subtitle"></p>
 								</div>
 								<div class="panel-body">
-									<h4>Panel Content</h4>
-									<p>Objectively network visionary methodologies via best-of-breed users. Phosfluorescently initiate go forward leadership skills before an expanded array of infomediaries. Monotonectally incubate web-enabled communities rather than process-centric.</p>
+								<h3 class="panel-title">Edit and/or add wards</h3>
+									
 								</div>
 							</div>
 							<!-- END PANEL HEADLINE -->
