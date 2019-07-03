@@ -92,7 +92,7 @@
 					<ul class="nav">
 						<li><a href="home.php" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="register-patient.php" class=""><i class="lnr lnr-file-add"></i> <span>Register Patient</span></a></li>
-						<li><a href="admitted-patients.php" class="active"><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
+						<li><a href="admitted-patients.php" class=""><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
 						<li><a href="assign-bed.php"><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
 						<li><a href="prescription.php" class=""><i class="lnr lnr-file-empty"></i> <span>Prescriptions</span></a></li>
 						<li>
@@ -104,7 +104,7 @@
 							</div>
 						</li>
                         <li><a href="wards.php" class=""><i class="lnr lnr-dice"></i> <span>Wards</span></a></li>
-                        <li><a href="patient-details.php" class=""><i class="lnr lnr-dice"></i> <span>Patient Details</span></a></li>
+                        <li><a href="patient-details.php" class="active"><i class="lnr lnr-dice"></i> <span>Patient Details</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -115,14 +115,14 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-                    <h3 class="page-title">Discharge patient</h3>
+                    <h3 class="page-title">Patient Details</h3>
                     <form action="php/discharge_patient.php" method="POST">
 					<div class="row">
 						<div class="col-md-12">
 							<!-- PANEL DEFAULT -->
 							<div class="panel">
 								<div class="panel-heading">
-									<h3 class="panel-title">Select patient to dischrge</h3>
+									<h3 class="panel-title">Select patient to view his/her details</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
 										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
@@ -130,9 +130,9 @@
 								</div>
 								<div class="panel-body">
                                     <span id="IDHint"></span>
-                                    <input type="number" class="form-control" placeholder="Enter Patient Number" name="patient_id" onkeyup="showIDHint(this.value)" required>
+                                    <input type="number" class="form-control" placeholder="Enter Patient ID Number" name="patient_id" onkeyup="showIDHint(this.value)" required>
                                     <br>
-                                    <input type="submit" name="submit" class="btn btn-danger" value="Discharge">
+                                    <input type="submit" name="submit" class="btn btn-danger" value="Search">
 								</div>
 							</div>
 							<!-- END PANEL DEFAULT -->
@@ -140,7 +140,163 @@
                     </div>
                     </form>
 				</div>
-			</div>
+            </div>
+            
+            <!-- Patient details below -->
+            <div class="container-fluid">
+					<h3 class="page-title">Patient Details:</h3>
+					
+					<form action="php/save_patient_info.php" method="POST"> 
+
+					<div class="row">
+						<div class="col-md-6">
+							<!-- PANEL HEADLINE -->
+							<div class="panel panel-headline">
+								<div class="panel-heading">
+									<h3 class="panel-title">Basic Information</h3>
+								</div>
+								<div class="panel-body">
+									<h4>First Name</h4>
+									<input type="text" class="form-control" placeholder="Enter patient first name" name="fname" required>
+									<br>
+									<h4>Middle Name</h4>
+									<input type="text" class="form-control" placeholder="Enter patient middle name" name="mname" required>
+									<br>
+									<h4>Last Name</h4>
+									<input type="text" class="form-control" placeholder="Enter patient last name" name="lname" required>
+									<br>
+									<h4>Gender</h4>
+									
+									<label class="fancy-radio">
+										<input name="gender" value="Male" type="radio">
+										<span><i></i>Male</span>
+									</label>
+									<label class="fancy-radio">
+										<input name="gender" value="Female" type="radio">
+										<span><i></i>Female</span>
+									</label>
+									
+									<br>
+									<h4>Date of Birth</h4>
+									<input type="date" class="form-control" name="bdate" required>
+									<br>
+								</div>
+							</div>
+							<!-- END PANEL HEADLINE -->
+						</div>
+						
+					</div>
+					<div class="row">
+						<div class="col-md-6">
+							<!-- PANEL DEFAULT -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Address & Contacts</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										
+									</div>
+								</div>
+								<div class="panel-body">
+								<h3>Address</h3>	
+								<h4>City</h4>
+									<input type="text" class="form-control" placeholder="Enter city" name="city">
+									
+									<h4>State</h4>
+									<input type="text" class="form-control" placeholder="Enter state" name="state">
+									<br>
+									<h3>Contacts</h3>
+									<h4>Phone Number</h4>
+									<input type="number" class="form-control" placeholder="Enter phone number" name="phone_no">
+									<h4>Work Number</h4>
+									<input type="number" class="form-control" placeholder="Enter work number" name="work_no">
+									<br>
+								</div>
+							</div>
+							<!-- END PANEL DEFAULT -->
+						</div>
+						<div class="col-md-4">
+							<!-- miscellaneous -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Miscellaneous</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>										
+									</div>
+								</div>
+								<div class="panel-body">
+								<h4>Marital Status</h4>
+									<select class="form-control" name="marital_status">
+										<option value="single">Single</option>
+										<option value="married">Married</option>
+										<option value="divorced">Divorced</option>
+										<option value="widowed">Widowed</option>
+									</select>									
+									<br>
+									<h4>Current Medication</h4>
+									<input type="text" class="form-control" placeholder="Enter medication" name="em_medicine">
+									<br>
+								</div>
+							</div>
+							<!-- END PANEL NO CONTROLS -->
+						</div>
+						
+					</div>
+					<h3>In case of emergency</h3>
+					<div class="row">
+					<div class="col-md-4">
+							<!-- next of kin -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Next of Kin</h3>
+									<p>Basic Info</p>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										
+									</div>
+								</div>
+								<div class="panel-body">
+									<p>Emergency Contact</p>
+									<h4>First Name</h4>
+									<input type="text" class="form-control" placeholder="Enter first name" name="em_fname">
+									<br>
+									<h4>Last Name</h4>
+									<input type="text" class="form-control" placeholder="Enter last name" name="em_lname">
+									<br>
+									<h4>Relationship with patient</h4>
+									<input type="text" class="form-control" placeholder="Relationship" name="em_relation">
+
+								</div>
+							</div>
+							<!-- END PANEL NO CONTROLS -->
+						</div>
+						<div class="col-md-4">
+							<!-- next of kin -->
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Next of Kin</h3>
+									<p>Contact Info</p>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										
+									</div>
+								</div>
+								<div class="panel-body">
+									<p>Emergency Contact</p>
+									<h4>Phone Number</h4>
+									<input type="text" class="form-control" placeholder="Phone number" name="em_phone_no">
+									<br>
+									<h4>Work Number</h4>
+									<input type="text" class="form-control" placeholder="Work number" name="em_work_no">
+									<br>
+								</div>
+							</div>
+							<!-- END PANEL NO CONTROLS -->
+						</div>
+					</div>
+				</div>
+
+
 			<!-- END MAIN CONTENT -->
 		</div>
 		<!-- END MAIN -->
