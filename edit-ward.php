@@ -93,10 +93,6 @@ $result = mysqli_query($conn, $sql);
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.php" class="">Profile</a></li>
-<<<<<<< HEAD
-									<!-- <li><a href="page-lockscreen.php" class="">Lockscreen</a></li> -->
-=======
->>>>>>> 0a7564d4eaff56d72cc55c407582669e8ee909ac
 								</ul>
 							</div>
 						</li>
