@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-	<title>Wards | MRS - Medicine Reminding System</title>
+	<title>Discharge Patient | MRS - Medicine Reminding System</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -22,8 +22,6 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
-
-	<link href="assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
 </head>
 
 <body>
@@ -94,8 +92,8 @@
 					<ul class="nav">
 						<li><a href="home.php" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="register-patient.php" class=""><i class="lnr lnr-file-add"></i> <span>Register Patient</span></a></li>
-						<li><a href="admitted-patients.php" class=""><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
-						<li><a href="assign-bed.php" class=""><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
+						<li><a href="admitted-patients.php" class="active"><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
+						<li><a href="assign-bed.php"><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
 						<li><a href="prescription.php" class=""><i class="lnr lnr-file-empty"></i> <span>Prescriptions</span></a></li>
 						<li>
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Nurse</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
@@ -106,109 +104,44 @@
 								</ul>
 							</div>
 						</li>
-						<li><a href="wards.php" class="active"><i class="lnr lnr-dice"></i> <span>Wards</span></a></li>
+                        <li><a href="wards.php" class=""><i class="lnr lnr-dice"></i> <span>Wards</span></a></li>
+                        <li><a href="patient-details.php" class=""><i class="lnr lnr-dice"></i> <span>Patient Details</span></a></li>
 						</ul>
 				</nav>
 			</div>
 		</div>
-		<!-- END LEFT SIDEBAR -->
-		<!-- MAIN -->
+        <!-- END LEFT SIDEBAR -->
+        <!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Wards</h3>
-					<?php include 'php/ward_info.php'; ?>
+                    <h3 class="page-title">Discharge patient</h3>
+                    <form action="php/discharge_patient.php" method="POST">
 					<div class="row">
-						<div class="col-md-6">
-							<!-- PANEL HEADLINE -->
-							<div class="panel panel-headline">
-								<div class="panel-heading">
-									<h3 class="panel-title">Ward Management</h3>
-									<p class="panel-subtitle"></p>
-								</div>
-								<div class="panel-body">
-								<h3 class="panel-title">Edit and/or add wards</h3>
-									
-								</div>
-							</div>
-							<!-- END PANEL HEADLINE -->
-						</div>
-						<div class="col-md-3">
+						<div class="col-md-12">
 							<!-- PANEL DEFAULT -->
 							<div class="panel">
 								<div class="panel-heading">
-									<h3 class="panel-title">Edit ward</h3>
+									<h3 class="panel-title">Select patient to dischrge</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
 										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
 									</div>
 								</div>
 								<div class="panel-body">
-									<p>Please select a ward to edit.</p>
-									<br>
-									<form method="POST" action="edit-ward.php">
-									<select class="form-control" name="ward">
-									<?php 
-									$sql = "SELECT DISTINCT ward_no FROM ward";
-									$result = mysqli_query($conn, $sql);
-									while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-									foreach ($row as $item){
-										echo "<option value='$item'>$item</option>";
-										}
-									}
-									?>
-									</select>
-									<br>
-									<input type="submit" class="btn btn-primary" style="width:100%" name="submit" value="Edit Ward" onclick="">
-									</form>
-									<br>
-									
+                                    <span id="IDHint"></span>
+                                    <input type="number" class="form-control" placeholder="Enter Patient Number" name="patient_id" onkeyup="showIDHint(this.value)" required>
+                                    <br>
+                                    <input type="submit" name="submit" class="btn btn-danger" value="Discharge">
 								</div>
 							</div>
 							<!-- END PANEL DEFAULT -->
 						</div>
-
-						<div class="col-md-3">
-							<!-- PANEL DEFAULT -->
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Add ward</h3>
-									<div class="right">
-										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
-									</div>
-								</div>
-								<div class="panel-body">
-								<form method="POST" action="php/add_ward.php">
-									Enter Ward Number:
-									<input type="text" class="form-control" placeholder="Ward Number" name="ward_no">
-									<br>
-									Enter Ward Capacity:
-									<input type="number" class="form-control" placeholder="Ward capacity" name="ward_capacity">	
-									<br>
-									Enter Ward Type:
-									<select class="form-control" name="ward_type" >
-                                        <option value="Pediatrics">Pediatrics</option>
-										<option value="Maternity">Maternity</option>
-										<option value="Oncology">Oncology</option>
-                                        <option value="Psychiatric">Psychiatric</option>
-                                        <option value="Geriatric">Geriatric</option>
-                                        <option value="Detoxification">Detoxification</option>
-                                        <option value="Dialysis">Dialysis</option>
-                                        <option value="Intensive Care Unit">Intensive Care Unit</option>
-                                        <option value="Emergency">Emergency</option>
-                                        </select>
-									<br>
-									
-									<input type="submit" class="btn btn-primary" style="width:100%" name="submit" value="Add Ward" onclick="">
-								</form>
-								</div>
-							</div>
-							<!-- END PANEL DEFAULT -->
-						</div>
-					</div>
-					
+                    </div>
+                    </form>
+				</div>
+			</div>
 			<!-- END MAIN CONTENT -->
 		</div>
 		<!-- END MAIN -->
@@ -219,29 +152,5 @@
 			</div>
 		</footer>
 	</div>
-	<!-- END WRAPPER -->
-	<!-- Javascript -->
-	<script src="assets/vendor/jquery/jquery.min.js"></script>
-	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
-	<script src="assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-	<script src="assets/scripts/klorofil-common.js"></script>
-	 <!-- this page js -->
-	 <script src="assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
-    <script src="assets/extra-libs/multicheck/jquery.multicheck.js"></script>
-    <script src="assets/extra-libs/DataTables/datatables.min.js"></script>
-    <script>
-        /****************************************
-         *       Basic Table                   *
-         ****************************************/
-        $('.zero_config').DataTable();
-	</script>
-	
-	<!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
-	<script src="assets/libs/jquery/dist/jquery.min.js"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/libs/popper.js/dist/umd/popper.min.js"></script>
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+    <!-- END WRAPPER -->
+    

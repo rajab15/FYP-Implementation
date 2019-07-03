@@ -109,7 +109,7 @@
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.html" class="">Profile</a></li>
-									<li><a href="page-lockscreen.html" class="">Lockscreen</a></li>
+									<!-- <li><a href="page-lockscreen.html" class="">Lockscreen</a></li> -->
 								</ul>
 							</div>
 						</li>

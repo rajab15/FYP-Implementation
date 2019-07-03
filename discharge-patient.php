@@ -100,11 +100,12 @@
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.php" class="">Profile</a></li>
-									<li><a href="page-lockscreen.php" class="">Lockscreen</a></li>
+									<!-- <li><a href="page-lockscreen.php" class="">Lockscreen</a></li> -->
 								</ul>
 							</div>
 						</li>
 						<li><a href="wards.php" class=""><i class="lnr lnr-dice"></i> <span>Wards</span></a></li>
+						<li><a href="patient-details.php" class=""><i class="lnr lnr-dice"></i> <span>Patient Details</span></a></li>
 						</ul>
 				</nav>
 			</div>
@@ -152,6 +153,7 @@
 		</footer>
 	</div>
 	<!-- END WRAPPER -->
+	
 	<!-- Javascript -->
 	<script src="assets/vendor/jquery/jquery.min.js"></script>
 	<script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>

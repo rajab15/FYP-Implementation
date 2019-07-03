@@ -125,7 +125,7 @@ $result = mysqli_query($conn, $sql);
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.php" class="">Profile</a></li>
-									<li><a href="page-lockscreen.php" class="">Lockscreen</a></li>
+									<!-- <li><a href="page-lockscreen.php" class="">Lockscreen</a></li> -->
 								</ul>
 							</div>
 						</li>
