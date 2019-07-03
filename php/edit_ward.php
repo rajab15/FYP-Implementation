@@ -27,12 +27,10 @@ $sql ="UPDATE ward SET ward_capacity = $ward_capacity, ward_type = '$ward_type' 
 //if(is_array($row)) {
 if($conn->query($sql) === TRUE) {
    
- 
-header("location:../wards.php");
-echo '<div class="alert alert-success alert-dismissible" role="alert">
-<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-<i class="fa fa-check-circle"></i> Your changes have been succesfully saved
-</div>';
+    echo '<script>';
+    echo  'alert("Changes have been saved successfully");';
+    echo '</script>'; 
+    header("Refresh:0; url=../wards.php");
 
 } 
 
@@ -40,7 +38,9 @@ echo '<div class="alert alert-success alert-dismissible" role="alert">
 else {
  
 
-echo '<center>' . "Change unsuccessful..." . '</center>';
+    echo '<script>';
+    echo  'alert("Changes have not been saved. Please try again.");';
+    echo '</script>';
 
 }
 

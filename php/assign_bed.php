@@ -10,7 +10,8 @@ $ward_no = $_POST["ward_no"];
 
 $bed_no = $_POST["bed_no"];
 
-$admission_date = $_POST["admission_date"];
+$admission_date = date("Y-m-d");
+//$admission_date = $_POST["admission_date"]; 
 
 $release_date = $_POST["release_date"];
 

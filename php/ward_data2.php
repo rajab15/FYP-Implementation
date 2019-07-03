@@ -42,12 +42,13 @@ for($j = 1; $j <= $number_of_wards; $j++){
     }
 
 
-    $ratio = count($assigned_beds)/$ward_capacity;
+    //$ratio = (count($assigned_beds)/$ward_capacity)*100;
+    $ratio = number_format((float)(count($assigned_beds)/$ward_capacity)*100, 2, '.', '');
     $size = count($assigned_beds);
 
     echo "Ward $j: $ratio% full";
     echo "<div class='progress'>";
-    echo "<div class='progress-bar progress-bar-info progress-bar-striped' role='progressbar' aria-valuenow='$size' aria-valuemin='0' aria-valuemax='$ward_capacity' style='width: $ratio%'>";
+    echo "<div class='progress-bar progress-bar-info progress-bar-striped active' role='progressbar' aria-valuenow='$size' aria-valuemin='0' aria-valuemax='$ward_capacity' style='width: $ratio%'>";
     echo "</div>";
     echo "</div>";
 
