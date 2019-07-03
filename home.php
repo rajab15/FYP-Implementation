@@ -74,7 +74,6 @@
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
 									<li><a href="page-profile.php" class="">Profile</a></li>
-									<li><a href="page-lockscreen.php" class="">Lockscreen</a></li>
 								</ul>
 							</div>
 						</li>
@@ -145,9 +144,14 @@
 							<div class="panel">
 								<div class="panel-heading">
 									<h3 class="panel-title">Ward Occupancies</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										
+									</div>
 								</div>
 								<div class="panel-body">
-									<?php include "php/ward_data2.php" ?>									
+									<?php include "php/ward_data2.php" ?>
+									<a href="wards.php"><button type="button" class="btn btn-success">See more details</button></a>
 								</div>
 							</div>
 							<!-- END PROGRESS BARS -->
@@ -158,7 +162,7 @@
 									<h3 class="panel-title">Monthly Admissions</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+										
 									</div>
 								</div>
 								<div class="panel-body">
@@ -174,7 +178,7 @@
 									<h3 class="panel-title">Monthly Discharges</h3>
 									<div class="right">
 										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
-										<button type="button" class="btn-remove"><i class="lnr lnr-cross"></i></button>
+										
 									</div>
 								</div>
 								<div class="panel-body">
@@ -204,8 +208,19 @@
 	<script src="assets/vendor/toastr/toastr.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
 	<script src="assets/scripts/alarm.js"></script>
-	<script src="assets/scripts/klorofil-common.js"></script>
-	<script src="assets/scripts/prescription_patients.js"></script>
+	<script>
+			$(document).ready(function(){
+			setInterval(function(){
+				$.post("php/prescription_data.php",function(postresult){
+					//var alarm_data = new Array();
+					alarm_data = JSON.parse(postresult);
+					for (var i = 0; i < alarm_data.length; i++) { 
+					display(alarm_data[i]);
+				}
+			});
+			}, 1800000);
+			});
+	</script>
 	<script>
 		
 	</script>
@@ -252,6 +267,9 @@
 			axisX: {
 				showGrid: false
 			},
+			axisY: {
+                    onlyInteger: true,          
+            },
 		};
 
 		new Chartist.Bar('#patients-per-month-bar-chart', ppm_data, options);
@@ -271,6 +289,9 @@
 			axisX: {
 				showGrid: false
 			},
+			axisY: {
+                    onlyInteger: true,          
+            },
 		};
 
 		new Chartist.Bar('#discharges-per-month-bar-chart', dpm_data, options);

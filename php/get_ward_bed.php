@@ -6,7 +6,7 @@ $conn = OpenCon();
 $q = $_REQUEST["q"];
 
 $hint = "";
-
+$assigned_beds[] = array();
 // lookup all hints from array if $q is different from "" 
 if ($q !== "") {
     $q = strtolower($q);
