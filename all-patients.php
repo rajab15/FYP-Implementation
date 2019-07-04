@@ -7,7 +7,7 @@
 <html lang="en">
 
 <head>
-	<title>Admitted Patients | MRS - Medicine Reminding System</title>
+	<title>Registered Patients | MRS - Medicine Reminding System</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -68,8 +68,8 @@
                 <ul class="nav">
 						<li><a href="home.php" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="register-patient.php" class=""><i class="lnr lnr-file-add"></i> <span>Register Patient</span></a></li>
-						<li><a href="all-patients.php" class=""><i class="lnr lnr-file-empty"></i> <span>Registered Patients</span></a></li>
-						<li><a href="admitted-patients.php" class="active"><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
+						<li><a href="all-patients.php" class="active"><i class="lnr lnr-file-empty"></i> <span>Registered Patients</span></a></li>
+						<li><a href="admitted-patients.php" class=""><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
 						<li><a href="assign-bed.php" class=""><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
 						<li><a href="prescription.php" class=""><i class="lnr lnr-file-empty"></i> <span>Prescriptions</span></a></li>
 						<li>
@@ -92,24 +92,10 @@
 			<!-- MAIN CONTENT -->
 			<div class="main-content">
 				<div class="container-fluid">
-					<h3 class="page-title">Admitted Patients</h3>
-					
-					<?php include 'php/ward_admissions.php';?>
+					<h3 class="page-title"></h3>
 				<div class="row">
 				<?php include 'php/all_patients.php'; ?>
-					<div class="col-md-12">
-							<div class="panel">
-								<div class="panel-heading">
-									<h3 class="panel-title">Discharge patient</h3>
-									
-								</div>
-								<div class="panel-body">
-								<a href="discharge-patient.php">	
-								<button type="button" class="btn btn-danger"><i class="fa fa-warning"></i> Discharge</button>
-								</a>
-								</div>
-							</div>
-					</div>
+					
 				</div>
 				</div>
 			</div>
@@ -120,7 +106,7 @@
 		<div class="clearfix"></div>
 		<footer>
 			<div class="container-fluid">
-				<p class="copyright">&copy; 2019 MRS - Medicine Reminding System</p>
+				<p class="copyright">&copy; <?php echo date("Y"); ?> MRS - Medicine Reminding System</p>
 			</div>
 		</footer>
 	</div>

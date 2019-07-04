@@ -15,9 +15,15 @@
 
 				$patient_id = $_POST["patient_id"];
 
-
-
 				$sql = "SELECT * FROM patient WHERE patient_id = $patient_id";
+
+				if (!mysqli_query($conn,$sql)) {
+					echo '<script>';
+				  echo  'alert("Wrong patient number given. Please enter correct patient number");';
+				  echo '</script>'; 
+				  header("Refresh:0; url=../patient-details.php");
+				  }
+
 				$result = mysqli_query($conn, $sql);
 				while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
 					$fname = $row['first_name'];
@@ -53,6 +59,9 @@
 					$em_medicine = $row["em_medication"];
 				}
 
+				
+				  
+
 				CloseCon($conn);
 
 				}
@@ -77,6 +86,7 @@
 	<!-- ICONS -->
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="../assets/img/favicon.png">
+	<link href="../assets/libs/datatables.net-bs4/css/dataTables.bootstrap4.css" rel="stylesheet">
 </head>
 
 <body>
@@ -115,6 +125,7 @@
 					<ul class="nav">
 						<li><a href="../home.php" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="../register-patient.php" class=""><i class="lnr lnr-file-add"></i> <span>Register Patient</span></a></li>
+						<li><a href="../all-patients.php" class=""><i class="lnr lnr-file-empty"></i> <span>Registered Patients</span></a></li>
 						<li><a href="../admitted-patients.php" class=""><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
 						<li><a href="../assign-bed.php"><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
 						<li><a href="../prescription.php" class=""><i class="lnr lnr-file-empty"></i> <span>Prescriptions</span></a></li>
@@ -136,16 +147,10 @@
         <!-- MAIN -->
 		<div class="main">
 			<!-- MAIN CONTENT -->
-			<div class="main-content">
-				
-            
-            
+			<div class="main-content">            
             <!-- Patient details below -->
             <div id="details"class="container-fluid">
 					<h3 class="page-title">Patient Details:</h3>
-					
-					
-
 					<div class="row">
 						<div class="col-md-6">
 							<!-- PANEL HEADLINE -->
@@ -226,7 +231,7 @@
 						</div>
 						
 					</div>
-					<h3>In case of emergency</h3>
+					<h3 class="page-title">In case of emergency:</h3>
 					<div class="row">
 					<div class="col-md-4">
 							<!-- next of kin -->
@@ -278,6 +283,75 @@
 							<!-- END PANEL NO CONTROLS -->
 						</div>
 					</div>
+					<!--Row end-->
+					<h3 class="page-title">Patient Records:</h3>
+					<?php
+						//include db connection
+						//include 'db_connection.php';
+
+							echo "<div class='row'>";
+							echo "<div class='col-md-12'>";
+							echo "<div class='panel'>";
+							echo "<div class='panel-heading'>";
+							echo "<h3 class='panel-title'>Ward Admission</h3>";
+							echo "<p>History</p>";
+							echo "</div>";
+							echo "<div class='panel-body'>";
+							//echo "<div>";
+							echo "<table class='table table-bordered table-striped zero_config'>";
+							echo "<thead><tr><th>Ward Number</th><th>Bed Number</th><th>Admission Date</th><th>Release Date</th><th>Admission Status</th></tr></thead>";
+							echo "<tbody>";
+
+						$conn = OpenCon();
+
+						$sql = "SELECT * FROM accommodation WHERE patient_id = $patient_id";
+							$result = mysqli_query($conn, $sql);
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+								echo "<tr><td>". $row['ward_no']."</td><td>". $row['bed_no']."</td><td>". $row['admission_date']."</td><td>". $row['release_date']."</td><td>". $row['state']."</td></tr>";
+						}
+
+							echo "</tbody>";
+							echo "</table>";
+							echo "</div>";
+							echo "</div>";
+							echo "</div>";
+							echo "</div>";        
+							
+					?> 
+					
+					<?php
+						//include db connection
+						//include 'db_connection.php';
+
+							echo "<div class='row'>";
+							echo "<div class='col-md-12'>";
+							echo "<div class='panel'>";
+							echo "<div class='panel-heading'>";
+							echo "<h3 class='panel-title'>Prescription Records</h3>";
+							echo "<p>History</p>";
+							echo "</div>";
+							echo "<div class='panel-body'>";
+							//echo "<div>";
+							echo "<table class='table table-bordered table-striped zero_config'>";
+							echo "<thead><tr><th>Medicine</th><th>Start date</th></tr></thead>";
+							echo "<tbody>";
+
+						$conn = OpenCon();
+
+						$sql = "SELECT * FROM prescription WHERE patient_id = $patient_id";
+							$result = mysqli_query($conn, $sql);
+							while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
+								echo "<tr><td>". $row['medicine']."</td><td>". $row['date']."</td></tr>";
+						}
+
+							echo "</tbody>";
+							echo "</table>";
+							echo "</div>";
+							echo "</div>";
+							echo "</div>";
+							echo "</div>";        
+							
+					?>   
 				</div>
 
                 </div>
@@ -300,6 +374,23 @@
 	<script src="../assets/vendor/toastr/toastr.min.js"></script>
 	<script src="../assets/scripts/klorofil-common.js"></script>
 	<script src="../assets/scripts/alarm.js"></script>
+	<!-- this page js -->
+	<script src="../assets/extra-libs/multicheck/datatable-checkbox-init.js"></script>
+    <script src="../assets/extra-libs/multicheck/jquery.multicheck.js"></script>
+    <script src="../assets/extra-libs/DataTables/datatables.min.js"></script>
+    <script>
+        /****************************************
+         *       Basic Table                   *
+         ****************************************/
+        $('.zero_config').DataTable();
+	</script>
+	
+	<!--Custom JavaScript -->
+    <script src="../dist/js/custom.min.js"></script>
+	<script src="../assets/libs/jquery/dist/jquery.min.js"></script>
+    <!-- Bootstrap tether Core JavaScript -->
+    <script src="../assets/libs/popper.js/dist/umd/popper.min.js"></script>
+    <script src="../assets/libs/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
     

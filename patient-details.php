@@ -3,61 +3,6 @@
  include 'php/details.php';
  include 'php/patient_data.php';
 ?>
-<?php
-				if(isset($_POST["submit"]))
-				{
-				
-				if(count($_POST)>0) 
-				{
-				//Including db connection file.
-				//include 'db_connection.php';
-				OpenCon();
-
-				$patient_id = $_POST["patient_id"];
-
-
-
-				$sql = "SELECT * FROM patient WHERE patient_id = $patient_id";
-				$result = mysqli_query($conn, $sql);
-				while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){
-					$fname = $row['first_name'];
-
-					$mname = $row['middle_name'];
-
-					$lname = $row['last_name'];
-
-					$city = $row["city"];
-
-					$state = $row["state"];
-
-					$phone_no = $row["phone_no"];
-
-					$work_no = $row["work_no"];
-
-					$gender = $row["gender"];
-
-					$bdate = $row["birth_date"];
-
-					$mstatus = $row["marital_status"];
-
-					$em_fname = $row["em_first_name"];
-
-					$em_lname = $row["em_last_name"];
-
-					$em_relation = $row["em_relationship"];
-
-					$em_phone_no = $row["em_phone_no"];
-
-					$em_work_no = $row["em_work_no"];
-
-					$em_medicine = $row["em_medication"];
-				}
-
-				CloseCon($conn);
-
-				}
-				}
-	?>
 <!doctype html>
 <html lang="en">
 
@@ -115,6 +60,7 @@
 					<ul class="nav">
 						<li><a href="home.php" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="register-patient.php" class=""><i class="lnr lnr-file-add"></i> <span>Register Patient</span></a></li>
+						<li><a href="all-patients.php" class=""><i class="lnr lnr-file-empty"></i> <span>Registered Patients</span></a></li>
 						<li><a href="admitted-patients.php" class=""><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
 						<li><a href="assign-bed.php"><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
 						<li><a href="prescription.php" class=""><i class="lnr lnr-file-empty"></i> <span>Prescriptions</span></a></li>
@@ -153,7 +99,7 @@
 								</div>
 								<div class="panel-body">
                                     <span id="IDHint"></span>
-                                    <input type="number" class="form-control" placeholder="Enter Patient ID Number" name="patient_id" onkeyup="getDetails(this.value)" required>
+                                    <input type="number" class="form-control" placeholder="Enter Patient ID Number" name="patient_id" onkeyup="showIDHint(this.value)" required>
                                     <br>
                                     <input type="submit" name="submit" class="btn btn-primary" value="Search">
 								</div>
@@ -339,6 +285,23 @@
 	<script src="assets/vendor/toastr/toastr.min.js"></script>
 	<script src="assets/scripts/klorofil-common.js"></script>
 	<script src="assets/scripts/alarm.js"></script>
+	<script>
+		function showIDHint(str) {
+			if (str.length == 0) { 
+				document.getElementById("IDHint").innerHTML = "";
+				return;
+			} else {
+				var xmlhttp = new XMLHttpRequest();
+				xmlhttp.onreadystatechange = function() {
+					if (this.readyState == 4 && this.status == 200) {
+						document.getElementById("IDHint").innerHTML = this.responseText;
+					}
+				};
+				xmlhttp.open("GET", "php/get_id_hint.php?q=" + str, true);
+				xmlhttp.send();
+			}
+		}
+	</script>
 </body>
 </html>
     

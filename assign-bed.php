@@ -65,6 +65,7 @@
 					<ul class="nav">
 						<li><a href="home.php" class=""><i class="lnr lnr-home"></i> <span>Home</span></a></li>
 						<li><a href="register-patient.php" class=""><i class="lnr lnr-file-add"></i> <span>Register Patient</span></a></li>
+						<li><a href="all-patients.php" class=""><i class="lnr lnr-file-empty"></i> <span>Registered Patients</span></a></li>
 						<li><a href="admitted-patients.php" class=""><i class="lnr lnr-list"></i> <span>Admitted Patients</span></a></li>
 						<li><a href="assign-bed.php" class="active"><i class="lnr lnr-cog"></i> <span>Assign Bed</span></a></li>
 						<li><a href="prescription.php" class=""><i class="lnr lnr-file-empty"></i> <span>Prescriptions</span></a></li>
@@ -112,7 +113,7 @@
                             <td scope="col">
                                 <!--<form  action="php/assign_bed.php" method="POST"> -->
 								Patient ID: <br>
-								<span id="IDHint"></span>
+								<span id="IDHint"></span> 
 								<input type="number" class="form-control" placeholder="Enter Patient ID" name="patient_id" onkeyup="showIDHint(this.value)" required>
                                 <br>
 								Ward Number: <br>
