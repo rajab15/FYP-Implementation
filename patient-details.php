@@ -122,7 +122,7 @@
 							<a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-user"></i> <span>Nurse</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
 							<div id="subPages" class="collapse ">
 								<ul class="nav">
-									<li><a href="page-profile.php" class="">Profile</a></li>									
+									<li><a href="page-profile.php" class="">Profile</a></li>
 								</ul>
 							</div>
 						</li>
@@ -179,16 +179,16 @@
 									<h3 class="panel-title">Basic Information</h3>
 								</div>
 								<div class="panel-body">
-									<h4>First Name</h4>
+									<h4>First Name:</h4>
 									<?php echo $fname; ?>
 									<br>
-									<h4>Middle Name</h4>
+									<h4>Middle Name:</h4>
 									<input type="text" class="form-control" placeholder="Enter patient middle name" name="mname" required>
 									<br>
-									<h4>Last Name</h4>
+									<h4>Last Name:</h4>
 									<input type="text" class="form-control" placeholder="Enter patient last name" name="lname" required>
 									<br>
-									<h4>Gender</h4>
+									<h4>Gender:</h4>
 									
 									<label class="fancy-radio">
 										<input name="gender" value="Male" type="radio">
@@ -200,7 +200,7 @@
 									</label>
 									
 									<br>
-									<h4>Date of Birth</h4>
+									<h4>Date of Birth:</h4>
 									<input type="date" class="form-control" name="bdate" required>
 									<br>
 								</div>
@@ -222,16 +222,16 @@
 								</div>
 								<div class="panel-body">
 								<h3>Address</h3>	
-								<h4>City</h4>
+								<h4>City:</h4>
 									<input type="text" class="form-control" placeholder="Enter city" name="city">
 									
-									<h4>State</h4>
+									<h4>State:</h4>
 									<input type="text" class="form-control" placeholder="Enter state" name="state">
 									<br>
 									<h3>Contacts</h3>
-									<h4>Phone Number</h4>
+									<h4>Phone Number:</h4>
 									<input type="number" class="form-control" placeholder="Enter phone number" name="phone_no">
-									<h4>Work Number</h4>
+									<h4>Work Number:</h4>
 									<input type="number" class="form-control" placeholder="Enter work number" name="work_no">
 									<br>
 								</div>
@@ -248,7 +248,7 @@
 									</div>
 								</div>
 								<div class="panel-body">
-								<h4>Marital Status</h4>
+								<h4>Marital Status:</h4>
 									<select class="form-control" name="marital_status">
 										<option value="single">Single</option>
 										<option value="married">Married</option>
@@ -256,7 +256,7 @@
 										<option value="widowed">Widowed</option>
 									</select>									
 									<br>
-									<h4>Current Medication</h4>
+									<h4>Current Medication:</h4>
 									<input type="text" class="form-control" placeholder="Enter medication" name="em_medicine">
 									<br>
 								</div>
@@ -280,13 +280,13 @@
 								</div>
 								<div class="panel-body">
 									<p>Emergency Contact</p>
-									<h4>First Name</h4>
+									<h4>First Name:</h4>
 									<input type="text" class="form-control" placeholder="Enter first name" name="em_fname">
 									<br>
-									<h4>Last Name</h4>
+									<h4>Last Name:</h4>
 									<input type="text" class="form-control" placeholder="Enter last name" name="em_lname">
 									<br>
-									<h4>Relationship with patient</h4>
+									<h4>Relationship with patient:</h4>
 									<input type="text" class="form-control" placeholder="Relationship" name="em_relation">
 
 								</div>
@@ -306,10 +306,10 @@
 								</div>
 								<div class="panel-body">
 									<p>Emergency Contact</p>
-									<h4>Phone Number</h4>
+									<h4>Phone Number:</h4>
 									<input type="text" class="form-control" placeholder="Phone number" name="em_phone_no">
 									<br>
-									<h4>Work Number</h4>
+									<h4>Work Number:</h4>
 									<input type="text" class="form-control" placeholder="Work number" name="em_work_no">
 									<br>
 								</div>
