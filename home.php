@@ -78,7 +78,7 @@
 							</div>
 						</li>
 						<li><a href="wards.php" class=""><i class="lnr lnr-dice"></i> <span>Wards</span></a></li>
-						<li><a href="patient-details.php" class=""><i class="lnr lnr-dice"></i> <span>Patient Details</span></a></li>
+						<li><a href="patient-details.php" class=""><i class="lnr lnr-user"></i> <span>Patient Details</span></a></li>
 						</ul>
 				</nav>
 			</div>
