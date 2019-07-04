@@ -114,7 +114,7 @@
 										<span class="icon"><i class="fa fa-shopping-bag"></i></span>
 										<p>
 											<span class="number"><?php echo $admitted_patients; ?></span>
-											<span class="title">Total Admitted Patients</span>
+											<span class="title">Total Admissions</span>
 										</p>
 									</div>
 								</div>
