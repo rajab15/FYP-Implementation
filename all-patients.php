@@ -95,6 +95,23 @@
 					<h3 class="page-title"></h3>
 				<div class="row">
 				<?php include 'php/all_patients.php'; ?>
+
+				<!-- report generation -->
+				<div class="row">				
+					<div class="col-md-12">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Print Patients List</h3>
+									
+								</div>
+								<div class="panel-body">
+								<a href="php/registered_patient_report.php">	
+								<button type="button" class="btn btn-danger"><i class="fa fa-warning"></i> Print</button>
+								</a>
+								</div>
+							</div>
+					</div>
+				</div>
 					
 				</div>
 				</div>

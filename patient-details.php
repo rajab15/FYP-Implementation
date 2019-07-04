@@ -115,11 +115,23 @@
             <div id="details"class="container-fluid" style="display:none">
 					<h3 class="page-title">Patient Details:</h3>
 					
+					<div class="row">
+						<div class="col-md-6">
+						<div class="panel-body">
+							<a href="php/registered_patient_report.php">	
+								<button type="button" class="btn btn-danger"><i class="fa fa-warning"></i> Print</button>
+							</a>
+						</div>
+						</div>
+					</div>
 					
 
 					<div class="row">
 						<div class="col-md-6">
 							<!-- PANEL HEADLINE -->
+
+							
+
 							<div class="panel panel-headline">
 								<div class="panel-heading">
 									<h3 class="panel-title">Basic Information</h3>
@@ -259,11 +271,16 @@
 									<input type="text" class="form-control" placeholder="Work number" name="em_work_no">
 									<br>
 								</div>
+								
 							</div>
-							<!-- END PANEL NO CONTROLS -->
+							<!-- END PANEL NO CONTROLS -->							
 						</div>
 					</div>
+
+					
 				</div>
+
+				
 
 
 			<!-- END MAIN CONTENT -->
