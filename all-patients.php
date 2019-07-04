@@ -124,7 +124,7 @@
 								</div>
 								<div class="panel-body">
 								<a href="php/registered_patient_report.php">	
-								<button type="button" class="btn btn-danger"><i class="fa fa-warning"></i> Print</button>
+								<button type="button" class="btn btn-success"><i class="fa fa-warning"></i> Print</button>
 								</a>
 								</div>
 							</div>
