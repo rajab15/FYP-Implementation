@@ -188,6 +188,48 @@
 								</div>
 							</div>
 						</div>
+						<div class="col-md-6">
+							<div class="panel">
+								<div class="panel-heading">
+									<h3 class="panel-title">Other useful information</h3>
+									<div class="right">
+										<button type="button" class="btn-toggle-collapse"><i class="lnr lnr-chevron-up"></i></button>
+										
+									</div>
+								</div>
+								<div class="panel-body">
+									<table class="table table-bordered">
+										<tbody>
+											<tr>
+												<th style="background-color:darkgrey">Most admitted patient</th>
+												<td><?php echo $full_name; ?></td>
+												<td>Admitted <?php echo $max_patient; ?> times</td>
+											</tr>
+											<tr>
+												<th style="background-color:darkgrey">Most prescribed medicine</th>
+												<td><?php echo $max_medicine_name; ?></td>
+												<td>Prescribed <?php echo $max_medicine; ?> times</td>
+											</tr>
+											<tr>
+												<th style="background-color:darkgrey">Most used ward</th>
+												<td>Ward <?php echo $max_ward_name; ?>: <?php echo $ward_type; ?></td>
+												<td>Overall admitted patients : <?php echo $max_ward; ?></td>
+											</tr>
+											<tr>
+												<th style="background-color:darkgrey">Largest ward</th>
+												<td><?php echo $largest_ward; ?></td>
+												<td>Ward capacity - <?php echo $max_ward_capacity; ?></td>
+											</tr>
+											<tr>
+												<th style="background-color:darkgrey">Most used ward category</th>
+												<td><?php echo $max_ward_type_name; ?></td>
+												<td>Used <?php echo $max_ward_type; ?> times</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+						</div>
 					</div>
 			</div>
 			<!-- END MAIN CONTENT -->
