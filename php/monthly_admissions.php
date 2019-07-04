@@ -87,7 +87,6 @@ $sql2 = "SELECT * FROM accommodation WHERE state = 'released'";
 $result2 = mysqli_query($conn, $sql2);
 
 if ($result2-> num_rows > 0) {
-    
     while ($row2 = $result2-> fetch_assoc()) { 
         if(isInRange($row2['admission_date'], $jan_range)){
             $jan_dis ++;
@@ -130,4 +129,59 @@ echo $sep_counter;
 echo $oct_counter;
 echo $nov_counter;
 echo $dec_counter;*/
+
+$sql3 = "SELECT COUNT(patient_id) AS max_patient, patient_id FROM accommodation GROUP BY patient_id ORDER BY COUNT(patient_id) DESC LIMIT 1";
+$result3 = mysqli_query($conn, $sql3);
+if ($result3-> num_rows > 0) {
+    while ($row3 = $result3-> fetch_assoc()) { 
+        $max_patient = $row3['max_patient'];
+        $max_patient_id = $row3['patient_id'];
+        $sql4 = "SELECT * FROM patient WHERE patient_id = $max_patient_id";
+        $result4 = mysqli_query($conn, $sql4);
+        while($row4 = mysqli_fetch_array($result4, MYSQLI_ASSOC)){
+            $full_name = $row4['first_name']." ".$row4['last_name'];
+                }
+        }
+}
+
+$sql3 = "SELECT COUNT(medicine) AS max_medicine, medicine FROM prescription GROUP BY medicine ORDER BY COUNT(medicine) DESC LIMIT 1";
+$result3 = mysqli_query($conn, $sql3);
+if ($result3-> num_rows > 0) {
+    while ($row3 = $result3-> fetch_assoc()) { 
+        $max_medicine = $row3['max_medicine'];
+        $max_medicine_name = $row3['medicine'];
+        }
+}
+
+$sql3 = "SELECT COUNT(ward_no) AS max_ward, ward_no FROM accommodation GROUP BY ward_no ORDER BY COUNT(ward_no) DESC LIMIT 1";
+$result3 = mysqli_query($conn, $sql3);
+if ($result3-> num_rows > 0) {
+    while ($row3 = $result3-> fetch_assoc()) { 
+        $max_ward = $row3['max_ward'];
+        $max_ward_name = $row3['ward_no'];
+        $sql4 = "SELECT ward_type FROM ward WHERE ward_no = $max_ward_name";
+        $result4 = mysqli_query($conn, $sql4);
+        while($row4 = mysqli_fetch_array($result4, MYSQLI_ASSOC)){
+            $ward_type = $row4['ward_type'];
+                }
+        }
+}
+
+$sql3 = "SELECT MAX(ward_capacity) AS max_ward_capacity, ward_no FROM ward GROUP BY ward_no ORDER BY MAX(ward_capacity) DESC LIMIT 1";
+$result3 = mysqli_query($conn, $sql3);
+if ($result3-> num_rows > 0) {
+    while ($row3 = $result3-> fetch_assoc()) { 
+        $max_ward_capacity = $row3['max_ward_capacity'];
+        $largest_ward = $row3['ward_no'];
+        }
+}
+
+$sql3 = "SELECT COUNT(ward_type) AS max_ward_type, ward_type FROM accommodation LEFT OUTER JOIN ward ON accommodation.ward_no = ward.ward_no GROUP BY ward_type ORDER BY COUNT(ward_type) DESC LIMIT 1";
+$result3 = mysqli_query($conn, $sql3);
+if ($result3-> num_rows > 0) {
+    while ($row3 = $result3-> fetch_assoc()) { 
+        $max_ward_type = $row3['max_ward_type'];
+        $max_ward_type_name = $row3['ward_type'];
+        }
+}
 ?>
